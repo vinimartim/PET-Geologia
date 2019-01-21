@@ -16,20 +16,27 @@ class Pagina extends CI_Controller {
 
 		$this->load->library('upload',$config);
 
-		if($this->upload->do_upload('capa')) {
-			$capa = $this->upload->data();
-			$capa_nome = $capa['file_name'];
+		if($this->upload->do_upload('url')) {
+			$query = $this->upload->data();
+			$url = $query['file_name'];
 		} else {
 			redirect('welcome');
 		}
 
+		$midia = array(
+			'url' => $url
+		);
+
 		$pagina = array(
 			'user_id' => $this->input->post('user_id'),
 			'titulo' => $this->input->post('titulo'),
+			'url' => $url,
 			'conteudo' => $this->input->post('conteudo'),
-			'atv_inicio' => $this->input->post('atv_inicio'),
-			'capa' => $capa_nome	
+			'atv_inicio' => $this->input->post('atv_inicio'),	
 		);
+
+		$this->load->model('midia_model');
+		$this->midia_model->insert($midia);
 
 		$this->load->model('pagina_model');
 		$this->pagina_model->insert($pagina);

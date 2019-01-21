@@ -7,7 +7,9 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->model('pagina_model');
 		$paginas = $this->pagina_model->buscaPaginasIniciais();
-		$dados = array('paginas' => $paginas);
+		$dados = array(
+			'paginas' => $paginas
+		);
 		$this->load->view('index.php',$dados);
 	}
 }

@@ -21,7 +21,6 @@
 </head>
 
 <body class="bg-dark">
-
 	<div class="container">
 		<div class="card card-login mx-auto mt-5">
 			<div class="card-header">Login</div>
@@ -55,7 +54,6 @@
 
 	<!-- Core plugin JavaScript-->
 	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
 </body>
 
 </html>

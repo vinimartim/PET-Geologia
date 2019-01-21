@@ -28,20 +28,26 @@ class Pagina_model extends CI_Model {
 
 		$this->load->library('upload',$config);
 
-		if($this->upload->do_upload('capa')) {
-			$capa = $this->upload->data();
-			$capa_nome = $capa['file_name'];
-		} else {
-			redirect('welcome');
-		}
+		if($this->upload->do_upload('url')) {
+            $query = $this->upload->data();
+            $url = $query['file_name'];
+        } else {
+            redirect('welcome');
+        }
+        $midia = array(
+            'url' => $url
+        );
 
 		$pagina = array(
 			'user_id' => $this->input->post('user_id'),
 			'titulo' => $this->input->post('titulo'),
 			'conteudo' => $this->input->post('conteudo'),
 			'atv_inicio' => $this->input->post('atv_inicio'),
-			'capa' => $capa_nome	
+			'url' => $url	
 		);
+
+        $this->load->model('midia_model');
+        $this->midia_model->insert($midia);
 
 		$this->db->where('id', $id);
 		return $this->db->update('pagina',$pagina);

@@ -16,6 +16,12 @@ class Migration_Create_pagina_table extends CI_Migration {
                 'NULL' => FALSE
             ),
 
+            'url' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+                'NULL' => TRUE
+            ),
+
             'conteudo' => array(
                 'type' => 'TEXT',
                 'NULL' => FALSE
@@ -24,12 +30,6 @@ class Migration_Create_pagina_table extends CI_Migration {
             'atv_inicio' => array (
                 'type' => 'boolean',
                 'default' => '1'
-            ),
-
-            'capa' => array(
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-                'NULL' => TRUE
             ),
 
             'user_id' => array(

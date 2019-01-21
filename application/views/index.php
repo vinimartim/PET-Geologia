@@ -136,7 +136,7 @@
 				<?php $id_modal = str_replace(' ', '', $pagina['titulo']); ?>
 				<div class="col-lg-4 col-sm-6">
 					<a class="portfolio-box pointer" data-toggle="modal" data-target="#modal-<?= $id_modal ?>">
-						<img class="img-fluid" src="<?= base_url() ?>assets/uploads/<?= $pagina['capa'] ?>" alt="">
+						<img class="img-fluid" src="<?= base_url() ?>assets/uploads/<?= $pagina['url'] ?>" alt="">
 						<div class="portfolio-box-caption">
 							<div class="portfolio-box-caption-content">
 								<div class="project-name ">
@@ -226,122 +226,6 @@
 			</div>
 		</div>
 	</section>
-
-	<!-- GEOLOGIA -->
-	<div class="modal" id="modal-geologia" tabindex="-1" role="dialog" aria-labelledby="modal-geologia-label" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="modal-geologia-label">Geologia</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae erat in magna elementum fermentum nec a nunc. Donec finibus pulvinar aliquam. Donec semper orci eu lectus dictum tempus. Vestibulum dolor enim, eleifend vitae nunc sed, faucibus elementum orci. Sed feugiat finibus tellus. Morbi interdum tellus at erat tempor, at luctus quam sagittis. Vivamus nec dignissim lectus. Mauris varius diam vel nulla finibus imperdiet. Nullam vitae enim ex.</p>
-
-					<p>Suspendisse nunc dui, consectetur at egestas eget, condimentum eu nisl. Aliquam a orci quis enim faucibus blandit. Curabitur eu venenatis ligula, mattis volutpat lorem. Nullam eu semper mauris, sed maximus metus. Phasellus pulvinar bibendum sagittis. Maecenas tincidunt condimentum tempus. Nulla sodales sed sapien vel elementum. Suspendisse tincidunt lectus non diam mollis rutrum. Integer dictum, velit posuere placerat scelerisque, nunc elit venenatis elit, a gravida elit nisi blandit eros. Nulla urna libero, scelerisque eget est quis, rhoncus fermentum nibh. Etiam sit amet arcu sit amet lorem commodo tempus ut eu mi. Quisque bibendum, nisi non vestibulum blandit, nulla odio efficitur quam, at cursus nunc sem vitae metus. Suspendisse ac lorem tellus.</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">fECHAR</button>
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- CURIOSIDADES -->
-	<div class="modal" id="modal-curiosidades" tabindex="-1" role="dialog" aria-labelledby="modal-curiosidades-label" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="modal-curiosidades-label">Curiosidades</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae erat in magna elementum fermentum nec a nunc. Donec finibus pulvinar aliquam. Donec semper orci eu lectus dictum tempus. Vestibulum dolor enim, eleifend vitae nunc sed, faucibus elementum orci. Sed feugiat finibus tellus. Morbi interdum tellus at erat tempor, at luctus quam sagittis. Vivamus nec dignissim lectus. Mauris varius diam vel nulla finibus imperdiet. Nullam vitae enim ex.</p>
-
-					<p>Suspendisse nunc dui, consectetur at egestas eget, condimentum eu nisl. Aliquam a orci quis enim faucibus blandit. Curabitur eu venenatis ligula, mattis volutpat lorem. Nullam eu semper mauris, sed maximus metus. Phasellus pulvinar bibendum sagittis. Maecenas tincidunt condimentum tempus. Nulla sodales sed sapien vel elementum. Suspendisse tincidunt lectus non diam mollis rutrum. Integer dictum, velit posuere placerat scelerisque, nunc elit venenatis elit, a gravida elit nisi blandit eros. Nulla urna libero, scelerisque eget est quis, rhoncus fermentum nibh. Etiam sit amet arcu sit amet lorem commodo tempus ut eu mi. Quisque bibendum, nisi non vestibulum blandit, nulla odio efficitur quam, at cursus nunc sem vitae metus. Suspendisse ac lorem tellus.</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">fECHAR</button>
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- GEOLOGIA ESPACIAL-->
-	<div class="modal" id="modal-geoesp" tabindex="-1" role="dialog" aria-labelledby="modal-geoesp-label" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="modal-geoesp-label">Geologia Espacial</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae erat in magna elementum fermentum nec a nunc. Donec finibus pulvinar aliquam. Donec semper orci eu lectus dictum tempus. Vestibulum dolor enim, eleifend vitae nunc sed, faucibus elementum orci. Sed feugiat finibus tellus. Morbi interdum tellus at erat tempor, at luctus quam sagittis. Vivamus nec dignissim lectus. Mauris varius diam vel nulla finibus imperdiet. Nullam vitae enim ex.</p>
-
-					<p>Suspendisse nunc dui, consectetur at egestas eget, condimentum eu nisl. Aliquam a orci quis enim faucibus blandit. Curabitur eu venenatis ligula, mattis volutpat lorem. Nullam eu semper mauris, sed maximus metus. Phasellus pulvinar bibendum sagittis. Maecenas tincidunt condimentum tempus. Nulla sodales sed sapien vel elementum. Suspendisse tincidunt lectus non diam mollis rutrum. Integer dictum, velit posuere placerat scelerisque, nunc elit venenatis elit, a gravida elit nisi blandit eros. Nulla urna libero, scelerisque eget est quis, rhoncus fermentum nibh. Etiam sit amet arcu sit amet lorem commodo tempus ut eu mi. Quisque bibendum, nisi non vestibulum blandit, nulla odio efficitur quam, at cursus nunc sem vitae metus. Suspendisse ac lorem tellus.</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">fECHAR</button>
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- GEOLOGIA NO COTIDIANO-->
-	<div class="modal" id="modal-geocot" tabindex="-1" role="dialog" aria-labelledby="modal-geocot-label" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="modal-geocot-label">Geologia no cotidiano</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae erat in magna elementum fermentum nec a nunc. Donec finibus pulvinar aliquam. Donec semper orci eu lectus dictum tempus. Vestibulum dolor enim, eleifend vitae nunc sed, faucibus elementum orci. Sed feugiat finibus tellus. Morbi interdum tellus at erat tempor, at luctus quam sagittis. Vivamus nec dignissim lectus. Mauris varius diam vel nulla finibus imperdiet. Nullam vitae enim ex.</p>
-
-					<p>Suspendisse nunc dui, consectetur at egestas eget, condimentum eu nisl. Aliquam a orci quis enim faucibus blandit. Curabitur eu venenatis ligula, mattis volutpat lorem. Nullam eu semper mauris, sed maximus metus. Phasellus pulvinar bibendum sagittis. Maecenas tincidunt condimentum tempus. Nulla sodales sed sapien vel elementum. Suspendisse tincidunt lectus non diam mollis rutrum. Integer dictum, velit posuere placerat scelerisque, nunc elit venenatis elit, a gravida elit nisi blandit eros. Nulla urna libero, scelerisque eget est quis, rhoncus fermentum nibh. Etiam sit amet arcu sit amet lorem commodo tempus ut eu mi. Quisque bibendum, nisi non vestibulum blandit, nulla odio efficitur quam, at cursus nunc sem vitae metus. Suspendisse ac lorem tellus.</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">fECHAR</button>
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- MINERAIS-->
-	<div class="modal" id="modal-minerais" tabindex="-1" role="dialog" aria-labelledby="modal-minerais-label" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="modal-minerais-label">Minerais</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae erat in magna elementum fermentum nec a nunc. Donec finibus pulvinar aliquam. Donec semper orci eu lectus dictum tempus. Vestibulum dolor enim, eleifend vitae nunc sed, faucibus elementum orci. Sed feugiat finibus tellus. Morbi interdum tellus at erat tempor, at luctus quam sagittis. Vivamus nec dignissim lectus. Mauris varius diam vel nulla finibus imperdiet. Nullam vitae enim ex.</p>
-
-					<p>Suspendisse nunc dui, consectetur at egestas eget, condimentum eu nisl. Aliquam a orci quis enim faucibus blandit. Curabitur eu venenatis ligula, mattis volutpat lorem. Nullam eu semper mauris, sed maximus metus. Phasellus pulvinar bibendum sagittis. Maecenas tincidunt condimentum tempus. Nulla sodales sed sapien vel elementum. Suspendisse tincidunt lectus non diam mollis rutrum. Integer dictum, velit posuere placerat scelerisque, nunc elit venenatis elit, a gravida elit nisi blandit eros. Nulla urna libero, scelerisque eget est quis, rhoncus fermentum nibh. Etiam sit amet arcu sit amet lorem commodo tempus ut eu mi. Quisque bibendum, nisi non vestibulum blandit, nulla odio efficitur quam, at cursus nunc sem vitae metus. Suspendisse ac lorem tellus.</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">fECHAR</button>
-
-				</div>
-			</div>
-		</div>
-	</div>
-
 
 	<!-- Bootstrap core JavaScript -->
 	<script src="<?= base_url() ?>assets/js/jquery.min.js"></script>

@@ -21,13 +21,13 @@
                     <a href="<?= base_url() ?>admin/dashboard">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    Usuários
+                    Páginas
                 </li>
             </ol>
 
-            
             <a class="btn btn-primary mb-3 float-right" href="<?= base_url() ?>dashboard/pagina/cadastrar">Cadastrar nova</a>
-            
+
+            <a class="btn btn-primary mb-3 float-right" href="<?= base_url() ?>dashboard/pagina/cadastrar">Gerenciar mídias</a>            
 
             <div class="table-responsive">
                 <table class="table table-striped">
@@ -41,7 +41,7 @@
                     <?php foreach((array)$paginas as $pagina) : ?>
                     <tr>
                         <td><?= $pagina['titulo'] ?></td>
-                        <td><img src="<?= base_url() ?>assets/uploads/<?= $pagina['capa'] ?>" style="width:50%"></td>
+                        <td><img src="<?= base_url() ?>assets/uploads/<?= $pagina['url'] ?>" style="width:50%"></td>
                         <td>
                           <?php if($pagina['atv_inicio'] == '1') : ?>
                           <i class="fas fa-check"></i>
@@ -78,30 +78,6 @@
 
     </div>
     <!-- /#wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="<?= base_url() ?>admin/logout">Logout</a>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <?php $this->load->view('dashboard/js') ?>
 

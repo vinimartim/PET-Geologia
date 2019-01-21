@@ -41,75 +41,53 @@
                     <label for="user_id" class="col-sm-1 col-form-label"></label>
                 </div>
 
-
                 <div class="form-label-group">
                     <input name="titulo" type="text" class="form-control form-control-lg" id="inputTitulo" placeholder="Título" autofocus>
                     <label for="inputTitulo" class="col-sm-1 col-form-label">Título</label>
                 </div>
 
-                <div class="form-group mt-3">
-                    
+                <div class="form-group mt-3">                   
                     <textarea name="conteudo" class="form-control form-control-lg" id="trumbowyg" placeholder="Conteúdo" autofocus></textarea>
-
                 </div>
 
                 <div class="form-group">
                     <div class="custom-file">
-                        <input name ="capa" type="file" class="custom-file-input" id="capa">
-                        <label for="capa" class="custom-file-label" for="customFile">Choose file</label>
+                        <input name ="url" type="file" class="custom-file-input" id="url">
+                        <label for="url" class="custom-file-label" for="customFile">Escolha o arquivo</label>
                     </div>
                 </div>
 
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" name="atv_inicio" class="custom-control-input" id="atv_inicio" value="1" checked>
-                    <label class="custom-control-label" for="atv_inicio">Página de inicio?</label>
+                    <label class="custom-control-label mb-1" for="atv_inicio">Página de inicio?</label>
                 </div>
-        
-       
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+    
+                <button type="submit" class="btn btn-primary mt-2">Cadastrar</button>
             </form>
           
 
-        <!-- Sticky Footer -->
-        <footer class="sticky-footer">
-          <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-              <span>Copyright © Your Website 2018</span>
-            </div>
-          </div>
-        </footer>
+            <!-- Sticky Footer -->
+            <footer class="sticky-footer">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright © Your Website 2018</span>
+                    </div>
+                </div>
+            </footer>
 
-      </div>
-      <!-- /.content-wrapper -->
+        </div>
+        <!-- /.content-wrapper -->
 
     </div>
     <!-- /#wrapper -->
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fas fa-angle-up"></i>
+        <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="<?= base_url() ?>admin/logout">Logout</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <?php $this->load->view('dashboard/js') ?>
+    <!-- Scripts Froala Editor -->
     <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/froala-editor@2.9.1/js/froala_editor.min.js'></script>
     <script type='text/javascript' src='<?= base_url() ?>assets/js/file.min.js'></script>
     <script type='text/javascript' src='<?= base_url() ?>assets/js/url.min.js'></script>
@@ -125,6 +103,7 @@
         </div>
     </div>
     <?php endif ?>
-  </body>
+
+</body>
 
 </html>
