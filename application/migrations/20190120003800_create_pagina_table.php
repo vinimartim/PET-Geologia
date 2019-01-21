@@ -21,6 +21,11 @@ class Migration_Create_pagina_table extends CI_Migration {
                 'NULL' => FALSE
             ),
 
+            'atv_inicio' => array (
+                'type' => 'boolean',
+                'default' => '1'
+            ),
+
             'capa' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '255',

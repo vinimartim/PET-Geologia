@@ -132,78 +132,42 @@
 	<section class="p-0 text-uppercase" id="portfolio">
 		<div class="container-fluid p-0">
 			<div class="row no-gutters">
+				<?php foreach((array)$paginas as $pagina) : ?>
+				<?php $id_modal = str_replace(' ', '', $pagina['titulo']); ?>
 				<div class="col-lg-4 col-sm-6">
-					<a class="portfolio-box pointer" data-toggle="modal" data-target="#modal-fosseis">
-						<img class="img-fluid" src="<?= base_url() ?>assets/img/portfolio/thumbnails/fosseis.png" alt="">
+					<a class="portfolio-box pointer" data-toggle="modal" data-target="#modal-<?= $id_modal ?>">
+						<img class="img-fluid" src="<?= base_url() ?>assets/uploads/<?= $pagina['capa'] ?>" alt="">
 						<div class="portfolio-box-caption">
 							<div class="portfolio-box-caption-content">
 								<div class="project-name ">
-									FÓSSEIS
+									<?= $pagina['titulo'] ?>
 								</div>
 							</div>
 						</div>
 					</a>
 				</div>
-				<div class="col-lg-4 col-sm-6">
-					<a class="portfolio-box pointer" data-toggle="modal" data-target="#modal-geologia">
-						<img class="img-fluid" src="<?= base_url() ?>assets/img/portfolio/thumbnails/geologia.png" alt="">
-						<div class="portfolio-box-caption">
-							<div class="portfolio-box-caption-content">
-								<div class="project-name">
-									GEOLOGIA
-								</div>
+				
+				<!-- MODAL -->
+				<div class="modal" id="modal-<?= $id_modal ?>" tabindex="-1" role="dialog" aria-labelledby="modal-modal-<?= $id_modal ?>-label" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="modal-modal-<?= $id_modal ?>-label"><?= $pagina['titulo'] ?></h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<?= $pagina['conteudo'] ?>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">fECHAR</button>
+
 							</div>
 						</div>
-					</a>
+					</div>
 				</div>
-				<div class="col-lg-4 col-sm-6">
-					<a class="portfolio-box pointer" data-toggle="modal" data-target="#modal-curiosidades">
-						<img class="img-fluid" src="<?= base_url() ?>assets/img/portfolio/thumbnails/curiosidades.png" alt="">
-						<div class="portfolio-box-caption">
-							<div class="portfolio-box-caption-content">
-								<div class="project-name">
-									CURIOSIDADES
-								</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-lg-4 col-sm-6">
-					<a class="portfolio-box pointer" data-toggle="modal" data-target="#modal-geoesp">
-						<img class="img-fluid" src="<?= base_url() ?>assets/img/portfolio/thumbnails/geoesp.png" alt="">
-						<div class="portfolio-box-caption">
-							<div class="portfolio-box-caption-content">
-								<div class="project-name">
-									GEOLOGIA ESPACIAL
-								</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-lg-4 col-sm-6">
-					<a class="portfolio-box pointer" data-toggle="modal" data-target="#modal-geocot">
-						<img class="img-fluid" src="<?= base_url() ?>assets/img/portfolio/thumbnails/geocot.png" alt="">
-						<div class="portfolio-box-caption">
-							<div class="portfolio-box-caption-content">
-								<div class="project-name">
-									GEOLOGIA NO COTIDIANO
-								</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-lg-4 col-sm-6">
-					<a class="portfolio-box pointer" data-toggle="modal" data-target="#modal-minerais">
-						<img class="img-fluid" src="<?= base_url() ?>assets/img/portfolio/thumbnails/minerais.png" alt="">
-						<div class="portfolio-box-caption">
-							<div class="portfolio-box-caption-content">
-								<div class="project-name">
-									MINERAIS
-								</div>
-							</div>
-						</div>
-					</a>
-				</div>
+				<?php endforeach ?>
 			</div>
 		</div>
 	</section>
@@ -262,42 +226,6 @@
 			</div>
 		</div>
 	</section>
-
-	<!-- Bootstrap core JavaScript -->
-	<script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
-	<script src="<?= base_url() ?>assets/js/bootstrap.bundle.min.js"></script>
-	<script src="<?= base_url() ?>assets/js/bootstrap.min.js"></script>
-
-	<!-- Plugin JavaScript -->
-	<script src="<?= base_url() ?>assets/js/jquery.easing.min.js"></script>
-	<script src="<?= base_url() ?>assets/js/scrollreveal.min.js"></script>
-	<script src="<?= base_url() ?>assets/js/jquery.magnific-popup.min.js"></script>
-
-	<!-- Custom scripts for this template -->
-	<script src="<?= base_url() ?>assets/js/creative.min.js"></script>
-
-	<!-- FÓSSEIS -->
-	<div class="modal" id="modal-fosseis" tabindex="-1" role="dialog" aria-labelledby="modal-fosseis-label" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="modal-fosseis-label">Fósseis</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae erat in magna elementum fermentum nec a nunc. Donec finibus pulvinar aliquam. Donec semper orci eu lectus dictum tempus. Vestibulum dolor enim, eleifend vitae nunc sed, faucibus elementum orci. Sed feugiat finibus tellus. Morbi interdum tellus at erat tempor, at luctus quam sagittis. Vivamus nec dignissim lectus. Mauris varius diam vel nulla finibus imperdiet. Nullam vitae enim ex.</p>
-
-					<p>Suspendisse nunc dui, consectetur at egestas eget, condimentum eu nisl. Aliquam a orci quis enim faucibus blandit. Curabitur eu venenatis ligula, mattis volutpat lorem. Nullam eu semper mauris, sed maximus metus. Phasellus pulvinar bibendum sagittis. Maecenas tincidunt condimentum tempus. Nulla sodales sed sapien vel elementum. Suspendisse tincidunt lectus non diam mollis rutrum. Integer dictum, velit posuere placerat scelerisque, nunc elit venenatis elit, a gravida elit nisi blandit eros. Nulla urna libero, scelerisque eget est quis, rhoncus fermentum nibh. Etiam sit amet arcu sit amet lorem commodo tempus ut eu mi. Quisque bibendum, nisi non vestibulum blandit, nulla odio efficitur quam, at cursus nunc sem vitae metus. Suspendisse ac lorem tellus.</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">fECHAR</button>
-
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<!-- GEOLOGIA -->
 	<div class="modal" id="modal-geologia" tabindex="-1" role="dialog" aria-labelledby="modal-geologia-label" aria-hidden="true">
@@ -413,6 +341,19 @@
 			</div>
 		</div>
 	</div>
+
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
+	<script src="<?= base_url() ?>assets/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Plugin JavaScript -->
+	<script src="<?= base_url() ?>assets/js/jquery.easing.min.js"></script>
+	<script src="<?= base_url() ?>assets/js/scrollreveal.min.js"></script>
+	<script src="<?= base_url() ?>assets/js/jquery.magnific-popup.min.js"></script>
+
+	<!-- Custom scripts for this template -->
+	<script src="<?= base_url() ?>assets/js/creative.min.js"></script>
 
 </body>
 </html>
