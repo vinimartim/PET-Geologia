@@ -20,5 +20,12 @@
                 <span>Páginas</span>
             </a>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url() ?>dashboard/midia/list">
+                <i class="fas fa-fw fa-file"></i>
+                <span>Gerenciar mídias</span>
+            </a>
+        </li>
     </ul>
 </div>

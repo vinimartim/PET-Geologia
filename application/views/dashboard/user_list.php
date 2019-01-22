@@ -25,7 +25,7 @@
                 </li>
             </ol>
 
-            <div class="btn btn-primary mb-3 float-right">Cadastrar novo</div>
+            <div class="btn btn-primary mb-3 float-right"><i class="fas fa-plus"></i> Cadastrar novo</div>
             
             <div class="table-responsive">
                 <table class="table table-striped">

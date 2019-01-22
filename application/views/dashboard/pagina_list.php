@@ -25,14 +25,12 @@
                 </li>
             </ol>
 
-            <a class="btn btn-primary mb-3 float-right" href="<?= base_url() ?>dashboard/pagina/cadastrar">Cadastrar nova</a>
-
-            <a class="btn btn-primary mb-3 float-right" href="<?= base_url() ?>dashboard/pagina/cadastrar">Gerenciar mídias</a>            
+            <a class="btn btn-primary mb-3 float-right" href="<?= base_url() ?>dashboard/pagina/cadastrar"><i class="fas fa-plus"></i> Cadastrar nova</a>       
 
             <div class="table-responsive">
                 <table class="table table-striped">
                     <tr>
-                        <th style="width: 50%">Título</th>
+                        <th style="width: 40%">Título</th>
                         <th>Capa</th>
                         <th>Página Inicial?</th>
                         <th style="width: 15%">Ações</th>
@@ -50,12 +48,12 @@
                           <?php endif ?>
                         </td>  
                         <td>
-                          <a href="<?= base_url('dashboard/pagina/editar?id='.$pagina['id']) ?>">
-                            Editar
-                        </a> | 
-                          <a href="<?= base_url('dashboard/pagina/remover?id='.$pagina['id']) ?>">
-                            Remover
-                        </a>
+                            <a class="btn btn-success btn-sm" href="<?= base_url('dashboard/pagina/editar?id='.$pagina['id']) ?>">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a class="btn btn-danger btn-sm disabled" href="<?= base_url('dashboard/pagina/remover?id='.$pagina['id']) ?>">
+                                <i class="fas fa-times"></i>
+                            </a>
                         </td>
                     </tr>
                     <?php endforeach ?>

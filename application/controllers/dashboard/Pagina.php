@@ -11,32 +11,32 @@ class Pagina extends CI_Controller {
 
 	public function new() {
 
-		$config['upload_path'] = FCPATH . 'assets/uploads';
-		$config['allowed_types'] = 'jpg|jpeg|png';
+		//$config['upload_path'] = FCPATH . 'assets/uploads';
+		//$config['allowed_types'] = 'jpg|jpeg|png';
 
-		$this->load->library('upload',$config);
+		//$this->load->library('upload',$config);
 
-		if($this->upload->do_upload('url')) {
-			$query = $this->upload->data();
-			$url = $query['file_name'];
-		} else {
-			redirect('welcome');
-		}
+		//if($this->upload->do_upload('url')) {
+			//$query = $this->upload->data();
+			//$url = $query['file_name'];
+		//} else {
+			//redirect('welcome');
+		//}
 
-		$midia = array(
-			'url' => $url
-		);
+		//$midia = array(
+		//	'url' => $url
+		//);
 
 		$pagina = array(
 			'user_id' => $this->input->post('user_id'),
 			'titulo' => $this->input->post('titulo'),
-			'url' => $url,
+			'url' => $this->input->post('url'),
 			'conteudo' => $this->input->post('conteudo'),
 			'atv_inicio' => $this->input->post('atv_inicio'),	
 		);
 
-		$this->load->model('midia_model');
-		$this->midia_model->insert($midia);
+		//$this->load->model('midia_model');
+		//$this->midia_model->insert($midia);
 
 		$this->load->model('pagina_model');
 		$this->pagina_model->insert($pagina);
@@ -44,9 +44,10 @@ class Pagina extends CI_Controller {
 	}
 
 	public function cadastrar() {
-		$this->load->view('dashboard/pagina_cadastrar', [
-			'title' => 'Cadastrar página | Administrador'
-		]);
+		$this->load->model('midia_model');
+		$midias = $this->midia_model->buscaTodas();
+		$dados = array('midias' => $midias);
+		$this->load->view('dashboard/pagina_cadastrar',$dados);
 	}
 
 	public function editar() {
@@ -54,7 +55,13 @@ class Pagina extends CI_Controller {
 		
 		$this->load->model('pagina_model');
 		$paginas = $this->pagina_model->retorna($id);
-		$dados = array('paginas' => $paginas);
+		$this->load->model('midia_model');
+		$midias = $this->midia_model->buscaTodas();
+
+		$dados = array(
+			'paginas' => $paginas,
+			'midias' => $midias
+		);
 		$this->load->view('dashboard/pagina_editar',$dados);
 	}
 

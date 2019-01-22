@@ -50,10 +50,34 @@
                     <textarea name="conteudo" class="form-control form-control-lg" id="trumbowyg" placeholder="Conteúdo"><?= $paginas['conteudo'] ?></textarea>
                 </div>
 
-                <div class="form-group">
-                    <div class="custom-file">
-                        <input name ="url" type="file" class="custom-file-input" id="url" value="<?= $paginas['url'] ?>">
-                        <label for="url" class="custom-file-label" for="customFile">Escolha o arquivo</label>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Escolher da galeria de mídias
+                </button>
+
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        <div class="row">
+                            <?php foreach((array)$midias as $midia) : ?>
+                                <?php 
+
+                                if($midia['url'] == $paginas['url']) {
+                                    $checked = 'checked';
+                                } else {
+                                    $checked = '';
+                                }
+
+                                ?>
+
+                            <div class="col">
+                                <div class="custom-control custom-radio">
+                                    <input class="custom-control-input" type="radio" name="url" id="<?= $midia['url'] ?>" value="<?= $midia['url'] ?>" <?= $checked ?>>
+                                    <label class="custom-control-label" for="<?= $midia['url'] ?>">
+                                        <img style="width: 50%" src="<?= base_url() ?>assets/uploads/<?= $midia['url'] ?>">
+                                    </label>
+                                </div>   
+                            </div>
+                            <?php endforeach ?>
+                        </div>
                     </div>
                 </div>
 
