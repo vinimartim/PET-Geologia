@@ -2,7 +2,7 @@
 
 class Pagina_model extends CI_Model {
     public function insert($pagina) {
-        $this->db->insert('pagina',$pagina);
+        return $this->db->insert('pagina',$pagina);
     }
 
     public function buscaTodas() {

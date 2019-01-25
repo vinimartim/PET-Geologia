@@ -37,7 +37,7 @@
             <?php $user_id = $this->session->userdata('id'); ?>
             <form name="inputPagina" method="post" action="salvar/<?= $paginas['id'] ?>" enctype="multipart/form-data">
                 
-                <input name="id" type="hidden" id="user_id" value="<?= $paginas['id'] ?>">
+                <input name="id" type="hidden" id="id" value="<?= $paginas['id'] ?>">
                
                 <input name="user_id" type="hidden" id="user_id" value="<?= $paginas['user_id'] ?>">
                 
@@ -61,16 +61,22 @@
                                 <?php 
 
                                 if($midia['url'] == $paginas['url']) {
-                                    $checked = 'checked';
+                                    $checked_radio = 'checked';
                                 } else {
-                                    $checked = '';
+                                    $checked_radio = '';
+                                }
+
+                                if($paginas['atv_inicio'] == 1) {
+                                    $checked_box = 'checked';
+                                } else {
+                                    $checked_box = '';
                                 }
 
                                 ?>
 
                             <div class="col">
                                 <div class="custom-control custom-radio">
-                                    <input class="custom-control-input" type="radio" name="url" id="<?= $midia['url'] ?>" value="<?= $midia['url'] ?>" <?= $checked ?>>
+                                    <input class="custom-control-input" type="radio" name="url" id="<?= $midia['url'] ?>" value="<?= $midia['url'] ?>" <?= $checked_radio ?>>
                                     <label class="custom-control-label" for="<?= $midia['url'] ?>">
                                         <img style="width: 50%" src="<?= base_url() ?>assets/uploads/<?= $midia['url'] ?>">
                                     </label>
@@ -89,7 +95,7 @@
                 </div>
 
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" name="atv_inicio" class="custom-control-input" id="atv_inicio" value="<?= $paginas['atv_inicio'] ?>" checked>
+                    <input type="checkbox" name="atv_inicio" class="custom-control-input" id="atv_inicio" value="1" <?= $checked_box ?>>
                     <label class="custom-control-label mb-1" for="atv_inicio">Página de inicio?</label>
                 </div>
 
@@ -121,12 +127,7 @@
     <script> $(function() { $('textarea').froalaEditor() }); </script>
 
     <?php else : ?>
-    <div class="container">
-        <div class="alert alert-danger">
-            <h2>Desculpe, mas...</h2>
-            <p>Você não tem permissões necessárias para acessar essa página. Clique <a href="<?= base_url() ?>">aqui</a> e retorne ao início.</p>
-        </div>
-    </div>
+        <?php $this->load->view('dashboard/login'); ?>
     <?php endif ?>
   </body>
 

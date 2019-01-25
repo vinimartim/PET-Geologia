@@ -3,10 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends CI_Controller {
 
-	public function dashboard() {
-		$this->load->view('dashboard/home');
-	}
-
 	public function list() {
 		$this->load->model('user_model');
 		$users = $this->user_model->buscaTodos();
@@ -22,8 +18,7 @@ class User extends CI_Controller {
 
 	public function logout() {
 		$this->session->unset_userdata('logged_in');
-		$this->session->set_flashdata('success' ,'Deslogado com sucesso');
-		
+		$this->session->set_flashdata('success','Usuário deslogado com sucesso');
 		redirect('/');
 	}
 
@@ -33,19 +28,21 @@ class User extends CI_Controller {
 		$senha = md5($this->input->post('senha'));
 		$user = $this->user_model->buscaUser($username,$senha);
 
-		$session = array (
-			'id' => $user['id'],
-			'name' => $user['name'],
-			'username' => $user['username'],
-			'logged_in' => TRUE
-		);
+		if($user) {
+			$session = array (
+				'id' => $user['id'],
+				'name' => $user['name'],
+				'username' => $user['username'],
+				'logged_in' => TRUE
+			);
 
-		if($session) {
 			$this->session->set_userdata($session);
-			redirect('dashboard/welcome/dashboard');
+			$this->session->set_flashdata('success','Usuário logado com sucesso');
+			redirect('dashboard');
+			
 		} else {
-			$this->session->set_flashdata('danger', 'danger');
-			redirect('dashboard/login');
+			$this->session->set_flashdata('danger','Usuário ou senha inválidos');
+			redirect('login');
 		}
 	}
 
@@ -63,7 +60,14 @@ class User extends CI_Controller {
 		);
 
 		$this->load->model('user_model');
-		$this->user_model->insert($user);
-		redirect('welcome');
+		$adc_usuario = $this->user_model->insert($user);
+
+		if($adc_usuario) {
+			$this->session->set_flashdata('success','Usuário cadastrado com sucesso!');
+			redirect('login');
+		} else {
+			$this->session->set_flashdata('danger','Não foi possível cadastrar o usuário');
+			redirect('dashboard/user/list');
+		}
 	}
 }

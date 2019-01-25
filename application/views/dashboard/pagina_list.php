@@ -25,6 +25,10 @@
                 </li>
             </ol>
 
+            <!--Flashdatas -->
+            <?php $this->load->view('dashboard/flashdata'); ?>
+            <!--/-->
+
             <a class="btn btn-primary mb-3 float-right" href="<?= base_url() ?>dashboard/pagina/cadastrar"><i class="fas fa-plus"></i> Cadastrar nova</a>       
 
             <div class="table-responsive">
@@ -51,7 +55,7 @@
                             <a class="btn btn-success btn-sm" href="<?= base_url('dashboard/pagina/editar?id='.$pagina['id']) ?>">
                                 <i class="fas fa-edit"></i>
                             </a>
-                            <a class="btn btn-danger btn-sm disabled" href="<?= base_url('dashboard/pagina/remover?id='.$pagina['id']) ?>">
+                            <a class="btn btn-danger btn-sm" href="<?= base_url('dashboard/pagina/remover?id='.$pagina['id']) ?>">
                                 <i class="fas fa-times"></i>
                             </a>
                         </td>
@@ -80,12 +84,7 @@
     <?php $this->load->view('dashboard/js') ?>
 
     <?php else : ?>
-    <div class="container">
-        <div class="alert alert-danger">
-            <h2>Desculpe, mas...</h2>
-            <p>Você não tem permissões necessárias para acessar essa página. Clique <a href="<?= base_url() ?>">aqui</a> e retorne ao início.</p>
-        </div>
-    </div>
+        <?php $this->load->view('dashboard/login'); ?>
     <?php endif ?>
   </body>
 

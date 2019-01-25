@@ -23,6 +23,8 @@
                     <li class="breadcrumb-item active">Overview</li>
                 </ol>
 
+                <?php $this->load->view('dashboard/flashdata'); ?>
+
                 <!-- Icon Cards-->
                 <div class="row">
                     <div class="col-xl-3 col-sm-6 mb-3">
@@ -112,12 +114,7 @@
         <?php $this->load->view('dashboard/js') ?>
 
         <?php else : ?>
-        <div class="container">
-            <div class="alert alert-danger">
-                <h2>Desculpe, mas...</h2>
-                <p>Você não tem permissões necessárias para acessar essa página. Clique <a href="<?= base_url() ?>">aqui</a> e retorne ao início.</p>
-            </div>
-        </div>
+            <?php $this->load->view('dashboard/login'); ?>
         <?php endif ?>
 </body>
 

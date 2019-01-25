@@ -31,7 +31,7 @@
                         Cadastrar página
                     </li>
                 </ol>
-
+                
 
                 <?php $user_id = $this->session->userdata('id'); ?>
                 <form name="inputPagina" method="post" action="new" enctype="multipart/form-data" mult>
@@ -112,12 +112,7 @@
     <script> $(function() { $('textarea').froalaEditor() }); </script>
 
     <?php else : ?>
-        <div class="container">
-            <div class="alert alert-danger">
-                <h2>Desculpe, mas...</h2>
-                <p>Você não tem permissões necessárias para acessar essa página. Clique <a href="<?= base_url() ?>">aqui</a> e retorne ao início.</p>
-            </div>
-        </div>
+       <?php $this->load->view('dashboard/login'); ?>
     <?php endif ?>
 
 </body>

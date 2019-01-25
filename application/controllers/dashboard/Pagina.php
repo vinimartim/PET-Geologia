@@ -10,23 +10,6 @@ class Pagina extends CI_Controller {
 	}
 
 	public function new() {
-
-		//$config['upload_path'] = FCPATH . 'assets/uploads';
-		//$config['allowed_types'] = 'jpg|jpeg|png';
-
-		//$this->load->library('upload',$config);
-
-		//if($this->upload->do_upload('url')) {
-			//$query = $this->upload->data();
-			//$url = $query['file_name'];
-		//} else {
-			//redirect('welcome');
-		//}
-
-		//$midia = array(
-		//	'url' => $url
-		//);
-
 		$pagina = array(
 			'user_id' => $this->input->post('user_id'),
 			'titulo' => $this->input->post('titulo'),
@@ -35,12 +18,16 @@ class Pagina extends CI_Controller {
 			'atv_inicio' => $this->input->post('atv_inicio'),	
 		);
 
-		//$this->load->model('midia_model');
-		//$this->midia_model->insert($midia);
-
 		$this->load->model('pagina_model');
-		$this->pagina_model->insert($pagina);
-		redirect('dashboard/pagina/list');
+		$add_pagina = $this->pagina_model->insert($pagina);
+
+		if($add_pagina) {
+			$this->session->set_flashdata('success', 'Página adicionada com sucesso!');
+			redirect('dashboard/pagina/list');	
+		} else {
+			$this->session->set_flashdata('danger', 'Não foi possível adicionar a página');
+			redirect('dashboard/pagina/list');
+		}
 	}
 
 	public function cadastrar() {
@@ -67,17 +54,29 @@ class Pagina extends CI_Controller {
 
 	public function salvar($id) {
 		$this->load->model('pagina_model');
-		$this->pagina_model->salvar($id);
-		//setar mensagem dps
-		redirect('dashboard/pagina/list');
+		$save_pagina = $this->pagina_model->salvar($id);
+		
+		if($save_pagina) {
+			$this->session->set_flashdata('success','Página editada com sucesso!');
+			redirect('dashboard/pagina/list');
+		} else {
+			$this->session->set_flashdata('danger','Não foi ´possível editar a página');
+		}
 	}
 
 	public function remover() {
 		$id = $this->input->get('id');
 
 		$this->load->model('pagina_model');
-		$this->pagina_model->remover($id);
-		redirect('dashboard/pagina/list');
+		$rm_pagina = $this->pagina_model->remover($id);
+
+		if($rm_pagina) {
+			$this->session->set_flashdata('success', 'Página removida com sucesso!');
+			redirect('dashboard/pagina/list');
+		} else {
+			$this->session->set_flashdata('danger', 'Não foi possível remover a página');
+			redirect('dashboard/pagina/list');
+		}
 
 	}
 }

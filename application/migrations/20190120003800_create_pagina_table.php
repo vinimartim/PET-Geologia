@@ -29,7 +29,7 @@ class Migration_Create_pagina_table extends CI_Migration {
 
             'atv_inicio' => array (
                 'type' => 'boolean',
-                'default' => '1'
+                'default' => '0',
             ),
 
             'user_id' => array(

@@ -25,6 +25,10 @@
                 </li>
             </ol>
 
+            <!--Flashdatas -->
+            <?php $this->load->view('dashboard/flashdata') ?>
+            <!--/-->
+
             <div class="btn btn-primary mb-3 float-right"><i class="fas fa-plus"></i> Cadastrar novo</div>
             
             <div class="table-responsive">
@@ -63,12 +67,7 @@
     <?php $this->load->view('dashboard/js') ?>
 
     <?php else : ?>
-        <div class="container">
-            <div class="alert alert-danger">
-                <h2>Desculpe, mas...</h2>
-                <p>Você não tem permissões necessárias para acessar essa página. Clique <a href="<?= base_url() ?>">aqui</a> e retorne ao início.</p>
-            </div>
-        </div>
+        <?php $this->load->view('dashboard/login'); ?>
     <?php endif ?>
 
 </body>

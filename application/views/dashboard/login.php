@@ -25,6 +25,7 @@
 		<div class="card card-login mx-auto mt-5">
 			<div class="card-header">Login</div>
 			<div class="card-body">
+				<?php $this->load->view('dashboard/flashdata'); ?>
 				<form name ="userinput" action="<?= base_url() ?>dashboard/user/autenticar" method="post">
 					<div class="form-group">
 						<div class="form-label-group">
@@ -49,11 +50,11 @@
 	</div>
 
 	<!-- Bootstrap core JavaScript-->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
+	<script src="<?= base_url() ?>assets/js/bootstrap.bundle.min.js"></script>
 
 	<!-- Core plugin JavaScript-->
-	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+	<script src="<?= base_url() ?>assets/js/jquery-easing/jquery.easing.min.js"></script>
 </body>
 
 </html>

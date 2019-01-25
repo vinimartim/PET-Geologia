@@ -2,7 +2,7 @@
 
 class User_model extends CI_Model {
     public function insert($user) {
-        $this->db->insert('user',$user);
+        return $this->db->insert('user',$user);
     }
 
     public function buscaUser($username,$senha) {

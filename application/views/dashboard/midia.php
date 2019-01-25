@@ -26,6 +26,10 @@
                 </li>
             </ol>
 
+            <!--Flashdatas -->
+            <?php $this->load->view('dashboard/flashdata'); ?>
+            <!--/-->
+
             <button type="button" class="btn btn-primary mb-3 float-right" data-toggle="modal" data-target="#modal-adc"><i class="fas fa-plus"></i> Adicionar nova</button>
 
             <!-- Modal de adicionar nova mídia-->
@@ -98,13 +102,7 @@
     <?php $this->load->view('dashboard/js') ?>
 
     <?php else : ?>
-    <div class="container">
-        <div class="alert alert-danger">
-            <h2>Desculpe, mas...</h2>
-            <p>Você não tem permissões necessárias para acessar essa página. Clique <a href="<?= base_url() ?>">aqui</a> e retorne ao início.</p>
-        </div>
-    </div>
-    <?php endif ?>
+        <?php $this->load->view('dashboard/login'); ?>
   </body>
 
 </html>

@@ -27,8 +27,14 @@ class Midia extends CI_Controller {
 		);
 
 		$this->load->model('midia_model');
-		$this->midia_model->insert($midia);
-		redirect('dashboard/midia/list');
+		$adc_midia = $this->midia_model->insert($midia);
+
+		if($adc_midia) {
+			$this->session->set_flashdata('success','Mídia adicionada com sucesso!');
+			redirect('dashboard/midia/list');
+		} else {
+			$this->session->set_flashdata('danger','Não foi possível adicionar a mídia');
+		}
 	}
 
 	public function remover() {
@@ -40,8 +46,15 @@ class Midia extends CI_Controller {
 		$file = FCPATH . 'assets/uploads/' . $midia['url'];
 		unlink($file);
 
-		$this->midia_model->remover($id);
-		redirect('dashboard/midia/list');
+		$rm_midia = $this->midia_model->remover($id);
+
+		if($rm_midia) {
+			$this->session->set_flashdata('success','Mídia removida com sucesso');
+			redirect('dashboard/midia/list');
+		} else {
+			$this->session->set_flashdata('danger','Não foi possível remover a mídia');
+			redirect('dashboard/midia/list');
+		}
 
 	}
 }
