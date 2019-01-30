@@ -80,7 +80,7 @@
 				<div class="col-lg-8 mx-auto text-center">
 					<h2 class="section-heading text-white">Quem somos</h2>
 					<hr class="light my-4">
-					<p class="text-faded mb-4 text-justify">O PET Geologia é o programa de educação tutorial da UNESP de Rio Claro. Criado pelo MEC, os grupos PET realizam diversas atividades extracurriculares de ensino, pesquisa e extensão. O grupo é formado por um professor tutor, 12 alunos bolsistas e alunos voluntários. Para conhecer nosso trabalho, fique ligado em nosso blog e em nossa página no Facebook ou participe de uma reunião do grupo.</p>
+					<p contenteditable="true" class="text-faded mb-4 text-justify">O PET Geologia é o programa de educação tutorial da UNESP de Rio Claro. Criado pelo MEC, os grupos PET realizam diversas atividades extracurriculares de ensino, pesquisa e extensão. O grupo é formado por um professor tutor, 12 alunos bolsistas e alunos voluntários. Para conhecer nosso trabalho, fique ligado em nosso blog e em nossa página no Facebook ou participe de uma reunião do grupo.</p>
 
 					<p class="text-faded mb-4 text-justify">Nossas reuniões ocorrem às terças-feiras às 12h45min na sala II do Bloco Didático GI do campus da UNESP de Rio Claro e estão abertas a todos que quiserem participar.</p>
 				</div>
