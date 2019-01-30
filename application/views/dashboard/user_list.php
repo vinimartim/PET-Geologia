@@ -25,11 +25,27 @@
                 </li>
             </ol>
 
+            <div class="row">
+                <div class="col">
+                    <h2>Usuários</h2>
+                </div>
+                <div class="col">
+                    <div class="btn btn-primary mb-3 float-right"><i class="fas fa-plus"></i> Novo</div>
+                </div>
+            </div>
+            
             <!--Flashdatas -->
             <?php $this->load->view('dashboard/flashdata') ?>
             <!--/-->
-
-            <div class="btn btn-primary mb-3 float-right"><i class="fas fa-plus"></i> Cadastrar novo</div>
+            
+            <form action="filtrar" method="post">
+                <div class="input-group mb-3">
+                    <input name="busca" type="text" class="form-control" placeholder="Pesquisar por nome ou username" aria-label="Pesquisar por nome ou username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Pesquisar</button>
+                    </div>
+                </div>
+            </form>
             
             <div class="table-responsive">
                 <table class="table table-striped">

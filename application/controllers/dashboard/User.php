@@ -5,14 +5,16 @@ class User extends CI_Controller {
 
 	public function list() {
 		$this->load->model('user_model');
-		$users = $this->user_model->buscaTodos();
-		$dados = array('users' => $users);
-		$this->load->view('dashboard/user_list',$dados);
+		$dados = $this->user_model->buscaTodos();
+		$this->load->view('dashboard/user_list',[
+			'users' => $dados,
+			'title'  => 'Usuários'
+		]);
 	}
 
 	public function login() {
 		$this->load->view('dashboard/login', [
-			'title' => 'Login | Administrador'
+			'title' => 'Login'
 		]);
 	}
 
@@ -48,7 +50,7 @@ class User extends CI_Controller {
 
 	public function cadastrar() {
 		$this->load->view('dashboard/user_cadastrar', [
-			'title' => 'Cadastrar usuário | Administrador'
+			'title' => 'Cadastrar usuário'
 		]);
 	}
 
@@ -87,5 +89,14 @@ class User extends CI_Controller {
 
 		$this->load->view('dashboard/user_cadastrar',$dados);
 
+	}
+
+	public function filtrar() {
+		$this->load->model('user_model');
+		$dados = $this->user_model->pesquisa($_POST);
+		$this->load->view('dashboard/user_list',[
+			'users' => $dados,
+			'title' => 'Usuários'
+		]);
 	}
 }

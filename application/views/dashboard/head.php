@@ -4,7 +4,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title><?= $title ?> - SMA</title>
+<title><?= $title ?> | PET-Geologia</title>
 
 <!-- Bootstrap core CSS-->
 <link href="<?= base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">

@@ -4,9 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Midia extends CI_Controller {
 	public function list() {
 		$this->load->model('midia_model');
-		$midias = $this->midia_model->buscaTodas();
-		$dados = array('midias' => $midias);
-		$this->load->view('dashboard/midia',$dados);
+		$dados = $this->midia_model->buscaTodas();
+		$this->load->view('dashboard/midia', [
+			'midias' => $dados,
+			'title' => 'Mídias'
+		]);
 	}
 
 	public function new() {

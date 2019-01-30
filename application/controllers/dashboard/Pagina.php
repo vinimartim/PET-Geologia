@@ -4,9 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Pagina extends CI_Controller {
 	public function list() {
 		$this->load->model('pagina_model');
-		$paginas = $this->pagina_model->buscaTodas();
-		$dados = array('paginas' => $paginas);
-		$this->load->view('dashboard/pagina_list',$dados);
+		$dados = $this->pagina_model->buscaTodas();
+		$this->load->view('dashboard/pagina_list',[
+			'paginas' => $dados,
+			'title' => 'Páginas'
+		]);
 	}
 
 	public function new() {
@@ -32,24 +34,26 @@ class Pagina extends CI_Controller {
 
 	public function cadastrar() {
 		$this->load->model('midia_model');
-		$midias = $this->midia_model->buscaTodas();
-		$dados = array('midias' => $midias);
-		$this->load->view('dashboard/pagina_cadastrar',$dados);
+		$dados = $this->midia_model->buscaTodas();
+		$this->load->view('dashboard/pagina_cadastrar',[
+			'midias' => $dados,
+			'title' => 'Cadastrar página'
+		]);
 	}
 
 	public function editar() {
 		$id = $this->input->get('id');
 		
 		$this->load->model('pagina_model');
-		$paginas = $this->pagina_model->retorna($id);
+		$dados['paginas'] = $this->pagina_model->retorna($id);
 		$this->load->model('midia_model');
-		$midias = $this->midia_model->buscaTodas();
+		$dados['midias'] = $this->midia_model->buscaTodas();
 
-		$dados = array(
-			'paginas' => $paginas,
-			'midias' => $midias
-		);
-		$this->load->view('dashboard/pagina_editar',$dados);
+		$this->load->view('dashboard/pagina_editar',[
+			'midias' => $dados['midias'],
+			'paginas' => $dados['paginas'],
+			'title' => 'Editar página'
+		]);
 	}
 
 	public function salvar($id) {

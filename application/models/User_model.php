@@ -15,4 +15,14 @@ class User_model extends CI_Model {
     	return $this->db->get('user')->result_array();
     }
 
+    public function pesquisa($busca) {
+        if(empty($busca)) 
+            return array();
+
+        $busca = $this->input->post('busca');
+        $this->db->or_like(array('name' => $busca, 'username' => $busca));
+        $query = $this->db->get('user');
+        return $query->result_array();
+    }
+
 }
