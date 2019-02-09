@@ -30,7 +30,7 @@
                     <h2>Usuários</h2>
                 </div>
                 <div class="col">
-                    <div class="btn btn-primary mb-3 float-right"><i class="fas fa-plus"></i> Novo</div>
+                    <a class="btn btn-primary mb-3 float-right" href="<? base_url() ?>cadastrar" ><i class="fas fa-plus"></i> Novo</a>
                 </div>
             </div>
             

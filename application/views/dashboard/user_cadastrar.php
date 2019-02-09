@@ -48,8 +48,8 @@
                     </div>
 
                     <div class="form-label-group">
-                        <input name="senha2" type="password" class="form-control form-control-lg" id="senha2" placeholder="Confirmar&#32senha">
-                        <label for="senha2" class="col-sm-1 col-form-label">Confirmar&#32senha</label>
+                        <input name="senha2" type="password" class="form-control form-control-lg" id="senha2" placeholder="Repetir">
+                        <label for="senha2" class="col-sm-1 col-form-label">Repetir</label>
                     </div>
 
                     <button type="submit" class="btn btn-primary mt-2">Cadastrar</button>

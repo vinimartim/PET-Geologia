@@ -66,7 +66,11 @@ class User extends CI_Controller {
 
 		if($adc_usuario) {
 			$this->session->set_flashdata('success','Usuário cadastrado com sucesso!');
-			redirect('login');
+			if($this->session->userdata('logged_in')) {
+				redirect('dashboard/user/list');
+			} else {
+				redirect('login');
+			}
 		} else {
 			redirect('dashboard/user/cadastrar');
 		}
