@@ -103,6 +103,7 @@
 
     <?php else : ?>
         <?php $this->load->view('dashboard/login'); ?>
+    <?php endif ?>
   </body>
 
 </html>

@@ -8,7 +8,6 @@
 </head>
 
 <body id="page-top">
-    <?php if($this->session->userdata('logged_in')) : ?>
     <?php $this->load->view('dashboard/navbar') ?>
 
     <div id="wrapper">
@@ -30,20 +29,6 @@
                 </ol>
      
                 <?php $this->load->view('dashboard/flashdata') ?>
-
-                <?php if($erros) : ?>
-                	<div class="alert alert-danger">
-                		<ul>
-                			<?= $erros; ?>
-                		</ul>
-                	</div>
-                <?php endif ?>
-
-                <?php if($sucesso) : ?>
-                	<div class="alert alert-success">
-                		<?= $sucesso; ?>
-                	</div>
-                <?php endif ?>
 
                 <form action="new" method="post">
                     <div class="form-label-group">
@@ -88,10 +73,6 @@
     </div>
 
     <?php $this->load->view('dashboard/js') ?>
-
-    <?php else : ?>
-       <?php $this->load->view('dashboard/login'); ?>
-    <?php endif ?>
 
 </body>
 
