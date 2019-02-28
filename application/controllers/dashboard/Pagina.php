@@ -53,7 +53,7 @@ class Pagina extends CI_Controller {
 			'midias' => $dados['midias'],
 			'paginas' => $dados['paginas'],
 			'title' => 'Editar página'
-		]);
+		]); 
 	}
 
 	public function salvar($id) {
