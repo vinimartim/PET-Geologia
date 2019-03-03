@@ -9,11 +9,10 @@
 <!-- Bootstrap core CSS-->
 <link href="<?= base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Page level plugin CSS-->
-<link href="<?= base_url() ?>assets/css/dataTables.bootstrap4.css" rel="stylesheet">
-
 <!-- Custom styles for this template-->
 <link href="<?= base_url() ?>/assets/css/sb-admin.css" rel="stylesheet">
 
 <!--Font Awesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">

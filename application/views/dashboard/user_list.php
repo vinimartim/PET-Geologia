@@ -30,7 +30,7 @@
                     <h2>Usuários</h2>
                 </div>
                 <div class="col">
-                    <a class="btn btn-primary mb-3 float-right" href="<? base_url() ?>cadastrar" ><i class="fas fa-plus"></i> Novo</a>
+                    <a class="btn btn-primary mb-3 float-right" href="<?= base_url() ?>dashboard/user/cadastrar" ><i class="fas fa-plus"></i> Novo</a>
                 </div>
             </div>
             
@@ -51,7 +51,7 @@
                 <table class="table table-striped">
                     <tr>
                         <th style="width: 60%">Nome</th>
-                        <th>Usuários</th>
+                        <th>Username</th>
                         <th style="width: 15%">Acões</th>
                     </tr>
 
@@ -59,7 +59,14 @@
                     <tr>
                         <td><?= $user['name'] ?></td>
                         <td><?= $user['username'] ?></td>
-                        <td>Editar | Remover</td>
+                        <td>
+                            <a class="btn btn-success btn-sm" href="<?= base_url('dashboard/user/editar?id='.$user['id']) ?>">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a class="btn btn-danger btn-sm" href="<?= base_url('dashboard/user/remover?id='.$user['id']) ?>">
+                                <i class="fas fa-times"></i>
+                            </a>
+                        </td>
                     </tr>
                     <?php endforeach ?>
                 </table>

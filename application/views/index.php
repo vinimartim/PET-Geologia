@@ -13,8 +13,8 @@
 	<link href="<?= base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
 	<!-- Custom fonts for this template -->
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+	
+	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
 	<!--Font Awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -41,16 +41,16 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="#about">Sobre nós</a>
+						<a class="nav-link js-scroll-trigger" href="#sobre">Sobre nós</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="#services">A Geologia</a>
+						<a class="nav-link js-scroll-trigger" href="#geologia">A Geologia</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link js-scroll-trigger" href="#portfolio">Aprenda mais</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="#contact">Fale conosco</a>
+						<a class="nav-link js-scroll-trigger" href="#contato">Fale conosco</a>
 					</li>
 				</ul>
 			</div>
@@ -62,8 +62,8 @@
 			<?php $this->load->view('dashboard/flashdata'); ?>
 			<div class="row">
 				<div class="col-lg-10 mx-auto">
-					<h1 class="text-uppercase">
-						<strong>PET Geologia</strong>
+					<h1 class="text-uppercase" style="letter-spacing: 20px;">
+						<strong>PET - Geologia</strong>
 					</h1>
 					<hr>
 				</div>
@@ -74,7 +74,7 @@
 		</div>
 	</header>
 
-	<section class="bg-primary" id="about">
+	<section class="bg-primary" id="sobre">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 mx-auto text-center">
@@ -204,7 +204,7 @@
 		</div>
 	</section>
 
-	<section id="contact">
+	<section id="contato">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 mx-auto text-center">

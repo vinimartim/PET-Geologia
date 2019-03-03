@@ -21,7 +21,7 @@
                         <a href="<?= base_url() ?>admin/dashboard">Dashboard</a>
                     </li>
                     <li class="breadcrumb-item active">
-                        Páginas
+                        Usuários
                     </li>
                     <li class="breadcrumb-item active">
                         Cadastrar usuário
@@ -30,29 +30,31 @@
      
                 <?php $this->load->view('dashboard/flashdata') ?>
 
-                <form action="new" method="post">
+                <ul id="lista-erros">
+                </ul>
+
+                <form action="<?= base_url() ?>dashboard/user/new" method="post" id="cadastrar">
                     <div class="form-label-group">
-                        <input name="name" type="text" class="form-control form-control-lg" id="name" placeholder="Nome" autofocus>
-                        
+                        <input name="name" type="text" class="form-control" id="name" placeholder="Nome" autofocus>              
                         <label for="name" class="col-sm-1 col-form-label">Nome</label>
                     </div>
 
                     <div class="form-label-group">
-                        <input name="username" type="text" class="form-control form-control-lg" id="username" placeholder="Username">
+                        <input name="username" type="text" class="form-control" id="username" placeholder="Username">
                         <label for="username" class="col-sm-1 col-form-label">Username</label>
-                    </div>        
+                    </div>
 
                     <div class="form-label-group">
-                        <input name="senha" type="password" class="form-control form-control-lg" id="senha" placeholder="Username">
+                        <input name="senha" type="password" class="form-control" id="senha" placeholder="Username">
                         <label for="senha" class="col-sm-1 col-form-label">Senha</label>
                     </div>
 
                     <div class="form-label-group">
-                        <input name="senha2" type="password" class="form-control form-control-lg" id="senha2" placeholder="Repetir">
+                        <input name="senha2" type="password" class="form-control" id="senha2" placeholder="Repetir">
                         <label for="senha2" class="col-sm-1 col-form-label">Repetir</label>
                     </div>
 
-                    <button type="submit" class="btn btn-primary mt-2">Cadastrar</button>
+                    <button id="enviar-user" type="submit" class="btn btn-primary mt-2">Cadastrar</button>
                 </form>
 
 
@@ -73,6 +75,7 @@
     </div>
 
     <?php $this->load->view('dashboard/js') ?>
+    <script src="<?= base_url() ?>assets/js/form_validation.js"></script>
 
 </body>
 

@@ -66,11 +66,7 @@ class User extends CI_Controller {
 
 		if($adc_usuario) {
 			$this->session->set_flashdata('success','Usuário cadastrado com sucesso!');
-			if($this->session->userdata('logged_in')) {
-				redirect('dashboard/user/list');
-			} else {
-				redirect('login');
-			}
+			redirect('dashboard/user/list');
 		} else {
 			redirect('dashboard/user/cadastrar');
 		}
@@ -83,5 +79,21 @@ class User extends CI_Controller {
 			'users' => $dados,
 			'title' => 'Usuários'
 		]);
+	}
+
+	public function remover() {
+		$id = $this->input->get('id');
+
+		$this->load->model('user_model');
+		$rm_user = $this->user_model->remover($id);
+
+		if($rm_user) {
+			$this->session->set_flashdata('success', 'Usuário removido com sucesso!');
+			redirect('dashboard/user/list');
+		} else {
+			$this->session->set_flashdata('danger', 'Não foi possível remover o usuário');
+			redirect('dashboard/user/list');
+		}
+
 	}
 }
