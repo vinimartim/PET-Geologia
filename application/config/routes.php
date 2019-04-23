@@ -50,9 +50,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
-$route[''] = 'welcome/index';
-$route['login'] = 'dashboard/user/login';
 $route['dashboard'] = 'dashboard/welcome/dashboard';
+$route['login'] =  'dashboard/welcome/loginForm';
+
+$route['dashboard/about'] = 'dashboard/about/list';
+$route['dashboard/about/editar/(:num)'] = 'dashboard/about/editForm/$1';
+
+$route['dashboard/users'] = 'dashboard/users/list';
+$route['dashboard/users/cadastrar'] = 'dashboard/users/newForm';
+$route['dashboard/users/editar/(:num)'] = 'dashboard/users/editForm/$1';
+
+$route['dashboard/informatives'] = 'dashboard/informatives/list';
+$route['dashboard/informatives/cadastrar'] = 'dashboard/informatives/newForm';
+$route['dashboard/informatives/editar/(:num)'] = 'dashboard/informatives/editForm/$1';
+
+$route['dashboard/images'] = 'dashboard/images/list';
+
+$route['dashboard/links'] = 'dashboard/links/list';
+$route['dashboard/links/cadastrar'] = 'dashboard/links/newForm';
+$route['dashboard/links/editar/(:num)'] = 'dashboard/links/editForm/$1';
+
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
