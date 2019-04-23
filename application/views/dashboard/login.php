@@ -25,24 +25,24 @@
 		<div class="card card-login mx-auto mt-5">
 			<div class="card-header">Login</div>
 			<div class="card-body">
-				<?php $this->load->view('dashboard/flashdata'); ?>
-				<form name ="userinput" action="<?= base_url() ?>dashboard/user/autenticar" method="post">
+				<?php $this->load->view('dashboard/templates/flashdata'); ?>
+				<form action="<?= base_url() ?>dashboard/welcome/auth" method="post">
 					<div class="form-group">
 						<div class="form-label-group">
-							<input name="username" type="text" id="inputUsername" class="form-control" placeholder="Username" required="required" autofocus="autofocus">
-							<label for="inputUsername">Username</label>
+							<input name="username" type="text" id="username" class="form-control" placeholder="Username" required="required" autofocus="autofocus">
+							<label for="username">Username</label>
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="form-label-group">
-							<input name="senha" type="password" id="inputSenha" class="form-control" placeholder="Senha" required="required">
-							<label for="inputSenha">Senha</label>
+							<input name="password" type="password" id="password" class="form-control" placeholder="Senha" required="required">
+							<label for="password">Senha</label>
 						</div>
 					</div>
 					<button class="btn btn-primary btn-block" type="submit">Login</button>
 				</form>
+
 				<div class="text-center">
-					<a class="d-block small mt-3" href="register.html">Registrar um usuário</a>
 					<a class="d-block small" href="forgot-password.html">Esqueceu sua senha?</a>
 				</div>
 			</div>
@@ -52,9 +52,6 @@
 	<!-- Bootstrap core JavaScript-->
 	<script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
 	<script src="<?= base_url() ?>assets/js/bootstrap.bundle.min.js"></script>
-
-	<!-- Core plugin JavaScript-->
-	<script src="<?= base_url() ?>assets/js/jquery-easing/jquery.easing.min.js"></script>
 </body>
 
 </html>

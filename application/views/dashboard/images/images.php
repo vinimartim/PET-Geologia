@@ -2,37 +2,44 @@
 <html lang="en">
 
 <head>
-    <?php $this->load->view('dashboard/head') ?>
+    <?php $this->load->view('dashboard/templates/head') ?>
     
 </head>
 
 <body id="page-top">
     <?php if($this->session->userdata('logged_in')) : ?>
-    <?php $this->load->view('dashboard/navbar') ?>
+    <?php $this->load->view('dashboard/templates/navbar') ?>
 
     <div id="wrapper">
 
-    <?php $this->load->view('dashboard/sidebar') ?>
+    <?php $this->load->view('dashboard/templates/sidebar') ?>
 
     <div id="content-wrapper">
         <div class="container-fluid">
             <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="<?= base_url() ?>admin/dashboard">Dashboard</a>
+                    <a href="<?= base_url() ?>dashboard">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    Páginas
+                    Imagens
                 </li>
             </ol>
 
             <!--Flashdatas -->
-            <?php $this->load->view('dashboard/flashdata'); ?>
+            <?php $this->load->view('dashboard/templates/flashdata'); ?>
             <!--/-->
 
-            <button type="button" class="btn btn-primary mb-3 float-right" data-toggle="modal" data-target="#modal-adc"><i class="fas fa-plus"></i> Adicionar nova</button>
+            <div class="row">
+                <div class="col">
+                    <h2>Imagens</h2>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary mb-3 float-right" data-toggle="modal" data-target="#modal-adc"><i class="fas fa-plus"></i> Nova</button>
+                </div>
+            </div>
 
-            <!-- Modal de adicionar nova mídia-->
+            <!-- Modal de adicionar nova imagem-->
             <div class="modal" id="modal-adc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLable" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -43,7 +50,7 @@
                             </button>
                         </div>
 
-                        <form name="inputMidia" action="new" method="post" enctype="multipart/form-data">
+                        <form action="<?= base_url() ?>dashboard/images/insert" method="post" enctype="multipart/form-data">
                             <div class="modal-body">
                                 <div class="form-group">
                                     <div class="custom-file">
@@ -69,13 +76,13 @@
                         <th>Ações</th>
                     </tr>
 
-                    <?php foreach((array)$midias as $midia) : ?>
+                    <?php foreach((array)$images as $image) : ?>
                     <tr>
                         <td>
-                            <img src="<?= base_url() ?>assets/uploads/<?= $midia['url'] ?>" style="width:20%">
+                            <img src="<?= base_url() ?>assets/uploads/<?= $image['url'] ?>" style="width:20%">
                         </td>
                         <td> 
-                            <a class="btn btn-danger btn-sm disabled" href="<?= base_url('dashboard/midia/remover?id='.$midia['id']) ?>">
+                            <a class="btn btn-danger btn-sm disabled" href="<?= base_url('dashboard/images/remove?id='.$image['id']) ?>">
                                 <i class="fas fa-times"></i>
                             </a>
                         </td>
@@ -83,26 +90,15 @@
                     <?php endforeach ?>
                 </table>
             </div>
-
-        <!-- Sticky Footer -->
-        <footer class="sticky-footer">
-          <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-              <span>Copyright © Your Website 2018</span>
-            </div>
-          </div>
-        </footer>
-
-      </div>
-      <!-- /.content-wrapper -->
-
+        </div>
+        <!-- /.content-wrapper -->
     </div>
     <!-- /#wrapper -->
 
-    <?php $this->load->view('dashboard/js') ?>
+    <?php $this->load->view('dashboard/templates/js') ?>
 
     <?php else : ?>
-        <?php $this->load->view('dashboard/login'); ?>
+        <?php $this->load->view('login'); ?>
     <?php endif ?>
   </body>
 

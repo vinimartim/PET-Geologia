@@ -7,7 +7,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>PET - Geologia</title>
+	<title><?= $title ?></title>
 
 	<!-- Bootstrap-->
 	<link href="<?= base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -47,7 +47,7 @@
 						<a class="nav-link js-scroll-trigger" href="#geologia">A Geologia</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link js-scroll-trigger" href="#portfolio">Aprenda mais</a>
+						<a class="nav-link js-scroll-trigger" href="#aprendamais">Aprenda mais</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link js-scroll-trigger" href="#contato">Fale conosco</a>
@@ -59,11 +59,11 @@
 
 	<header class="masthead text-center text-white d-flex">
 		<div class="container my-auto">
-			<?php $this->load->view('dashboard/flashdata'); ?>
+			<?php $this->load->view('dashboard/templates/flashdata'); ?>
 			<div class="row">
 				<div class="col-lg-10 mx-auto">
-					<h1 class="text-uppercase" style="letter-spacing: 20px;">
-						<strong>PET - Geologia</strong>
+					<h1 class="text-uppercase" style="letter-spacing: 5px;">
+						<strong>PET-Geologia</strong>
 					</h1>
 					<hr>
 				</div>
@@ -78,11 +78,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 mx-auto text-center">
-					<h2 class="section-heading text-white">Quem somos</h2>
+					<h2 class="section-heading text-white">Sobre nós</h2>
 					<hr class="light my-4">
-					<p contenteditable="true" class="text-faded mb-4 text-justify">O PET Geologia é o programa de educação tutorial da UNESP de Rio Claro. Criado pelo MEC, os grupos PET realizam diversas atividades extracurriculares de ensino, pesquisa e extensão. O grupo é formado por um professor tutor, 12 alunos bolsistas e alunos voluntários. Para conhecer nosso trabalho, fique ligado em nosso blog e em nossa página no Facebook ou participe de uma reunião do grupo.</p>
-
-					<p class="text-faded mb-4 text-justify">Nossas reuniões ocorrem às terças-feiras às 12h45min na sala II do Bloco Didático GI do campus da UNESP de Rio Claro e estão abertas a todos que quiserem participar.</p>
+					<p class="text-faded mb-4 text-justify"><?= nl2br($about['content']) ?></p>
 				</div>
 			</div>
 		</div>
@@ -99,33 +97,19 @@
 		</div>
 		<div class="container">
 			<div class="row">
+				<?php foreach((array) $links as $link) : ?>
+				<?php if($link['home_section'] == 1) : ?>
 				<div class="col text-center">
 					<div class="service-box mt-5 mx-auto ">
-						<a class="link" href="">
-							<i class="fas fa-4x fa-university mb-3 sr-icon-1"></i>
-							<h3 class="mb-3">Geologia na UNESP</h3>
+						<a class="link" href="<?= $link['url'] ?>">
+							<div class="fa-4x sr-icon-1"><?= $link['icon'] ?></div>
+							<h3 class="mb-3"><?= $link['title'] ?></h3>
 						</a>
-						<p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
+						<p class="text-muted mb-0"><?= $link['description'] ?></p>
 					</div>
 				</div>
-				<div class="col text-center">
-					<div class="service-box mt-5 mx-auto">
-						<a class="link" href="">
-							<i class="fas fa-4x fa-atlas mb-3 sr-icon-2"></i>
-							<h3 class="mb-3">Curso e Profissão</h3>
-						</a>
-						<p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
-					</div>
-				</div>
-				<div class="col text-center">
-					<div class="service-box mt-5 mx-auto">
-						<a class="link" href="">
-							<i class="fas fa-4x fa-map-marker-alt mb-3 sr-icon-3"></i>
-							<h3 class="mb-3">Onde Estudar</h3>
-						</a>
-						<p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
-					</div>
-				</div>
+				<?php endif ?>
+				<?php endforeach ?>
 			</div>
 		</div>
 	</section>
@@ -133,15 +117,15 @@
 	<section class="p-0 text-uppercase" id="portfolio">
 		<div class="container-fluid p-0">
 			<div class="row no-gutters">
-				<?php foreach((array)$paginas as $pagina) : ?>
-				<?php $id_modal = str_replace(' ', '', $pagina['titulo']); ?>
+				<?php foreach((array)$informatives as $informative) : ?>
+				<?php $id_modal = str_replace(' ', '', $informative['title']); ?>
 				<div class="col-lg-4 col-sm-6">
 					<a class="portfolio-box pointer" data-toggle="modal" data-target="#modal-<?= $id_modal ?>">
-						<img class="img-fluid" src="<?= base_url() ?>assets/uploads/<?= $pagina['url'] ?>" alt="">
+						<img class="img-fluid" src="<?= base_url() ?>assets/uploads/<?= $informative['url'] ?>" alt="">
 						<div class="portfolio-box-caption">
 							<div class="portfolio-box-caption-content">
 								<div class="project-name ">
-									<?= $pagina['titulo'] ?>
+									<?= $informative['title'] ?>
 								</div>
 							</div>
 						</div>
@@ -153,13 +137,13 @@
 					<div class="modal-dialog modal-dialog-centered" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title" id="modal-modal-<?= $id_modal ?>-label"><?= $pagina['titulo'] ?></h5>
+								<h5 class="modal-title" id="modal-modal-<?= $id_modal ?>-label"><?= $informative['title'] ?></h5>
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
 							</div>
 							<div class="modal-body">
-								<?= $pagina['conteudo'] ?>
+								<?= $informative['content'] ?>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">fECHAR</button>
@@ -173,32 +157,24 @@
 		</div>
 	</section>
 
-	<section class="bg-dark text-white">
+	<section class="bg-dark text-white" id="aprendamais">
 		<div class="container text-center">
-			<h2 class="mb-4"><i class="fas fa-plus"></i> Mais</h2>
+			<h2 class="mb-4">Aprenda <i class="fas fa-plus"></i></h2>
 			<div class="container">
 				<div class="row">
+				<?php foreach((array) $links as $link) : ?>
+				<?php if($link['home_section'] == 2) : ?>
 					<div class="col text-center">
 						<div class="service-box mt-5 mx-auto">
-							<i class="fas fa-4x fa-comment mb-3 sr-icon-2"></i>
-							<h3 class="mb-3">Fórum</h3>
-							<p class="text-muted mb-0">Aqui você pode tirar suas dúvidas e dar sugestões!</p>
+							<a class="link" href="<?= $link['url'] ?>">
+								<div class="fa-4x sr-icon-1"><?= $link['icon'] ?></div>
+								<h3 class="mb-3"><?= $link['title'] ?></h3>
+							</a>
+							<p class="text-muted mb-0"><?= $link['description'] ?></p>
 						</div>
 					</div>
-					<div class="col text-center">
-						<div class="service-box mt-5 mx-auto">
-							<i class="fas fa-4x fa-link mb-3 sr-icon-3"></i>
-							<h3 class="mb-3">Links Interessantes</h3>
-							<p class="text-muted mb-0">Coisas legais que gostaríamos de compartilhar</p>
-						</div>
-					</div>
-					<div class="col text-center">
-						<div class="service-box mt-5 mx-auto">
-							<i class="fas fa-4x fa-file mb-3 sr-icon-4"></i>
-							<h3 class="mb-3">Questões de Vestibular</h3>
-							<p class="text-muted mb-0">Para te ajudar a estudar e se preparar!</p>
-						</div>
-					</div>
+				<?php endif ?>
+				<?php endforeach ?>
 				</div>
 			</div>
 		</div>
@@ -213,17 +189,16 @@
 					<p class="mb-5">Você pode mandar uma mensagem para nós com dúvidas, sugestões ou curiosidades.</p>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-lg-4 ml-auto text-center">
-					<i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
-					<p>123-456-6789</p>
+
+			<div class="row no-gutters">
+				<?php foreach((array) $links as $link) : ?>
+				<?php if($link['home_section'] == 3) : ?>
+				<div class="col text-center">
+					<div class="fa-3x"><?= $link['icon'] ?></div>
+					<p><?= $link['description'] ?></p>
 				</div>
-				<div class="col-lg-4 mr-auto text-center">
-					<i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
-					<p>
-						<a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
-					</p>
-				</div>
+				<?php endif ?>
+				<?php endforeach ?>
 			</div>
 		</div>
 	</section>

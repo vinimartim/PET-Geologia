@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-    <?php $this->load->view('dashboard/head') ?>
+    <?php $this->load->view('dashboard/templates/head') ?>
 </head>
 
 <body id="page-top">
     <?php if($this->session->userdata('logged_in')) : ?>
-    <?php $this->load->view('dashboard/navbar') ?>
+    <?php $this->load->view('dashboard/templates/navbar') ?>
 
     <div id="wrapper">
 
-    <?php $this->load->view('dashboard/sidebar') ?>
+    <?php $this->load->view('dashboard/templates/sidebar') ?>
 
     <div id="content-wrapper">
         <div class="container-fluid">
@@ -30,12 +30,12 @@
                     <h2>Usuários</h2>
                 </div>
                 <div class="col">
-                    <a class="btn btn-primary mb-3 float-right" href="<?= base_url() ?>dashboard/user/cadastrar" ><i class="fas fa-plus"></i> Novo</a>
+                    <a class="btn btn-primary mb-3 float-right" href="<?= base_url() ?>dashboard/users/cadastrar" ><i class="fas fa-plus"></i> Novo</a>
                 </div>
             </div>
             
             <!--Flashdatas -->
-            <?php $this->load->view('dashboard/flashdata') ?>
+            <?php $this->load->view('dashboard/templates/flashdata') ?>
             <!--/-->
             
             <form action="filtrar" method="post">
@@ -60,10 +60,10 @@
                         <td><?= $user['name'] ?></td>
                         <td><?= $user['username'] ?></td>
                         <td>
-                            <a class="btn btn-success btn-sm" href="<?= base_url('dashboard/user/editar?id='.$user['id']) ?>">
+                            <a method="post" class="btn btn-success btn-sm" href="<?= base_url() ?>dashboard/users/editar/<?= $user['id'] ?>">
                                 <i class="fas fa-edit"></i>
                             </a>
-                            <a class="btn btn-danger btn-sm" href="<?= base_url('dashboard/user/remover?id='.$user['id']) ?>">
+                            <a class="btn btn-danger btn-sm" href="<?= base_url('dashboard/users/remove?id='.$user['id']) ?>">
                                 <i class="fas fa-times"></i>
                             </a>
                         </td>
@@ -71,15 +71,6 @@
                     <?php endforeach ?>
                 </table>
             </div>
-        
-            <!-- Sticky Footer -->
-            <footer class="sticky-footer">
-              <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                  <span>Copyright © Your Website 2018</span>
-                </div>
-              </div>
-            </footer>
 
         </div>
         <!-- /.content-wrapper -->
@@ -87,10 +78,10 @@
     </div>
     <!-- /#wrapper -->
 
-    <?php $this->load->view('dashboard/js') ?>
+    <?php $this->load->view('dashboard/templates/js') ?>
 
     <?php else : ?>
-        <?php $this->load->view('dashboard/login'); ?>
+        <?php $this->load->view('login'); ?>
     <?php endif ?>
 
 </body>
