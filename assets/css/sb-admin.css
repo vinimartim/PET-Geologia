@@ -11,6 +11,7 @@ html {
 
 body {
   height: 100%;
+  font-family: 'Nunito', sans-serif;
 }
 
 #wrapper {
@@ -372,4 +373,16 @@ body.sidebar-toggled footer.sticky-footer {
   body.sidebar-toggled footer.sticky-footer {
     width: calc(100% - 90px);
   }
+}
+
+#editModal .modal-dialog {
+  max-width: 800px;
+}
+
+.textAreaEditModal {
+  height: 200px;
+}
+
+.link_active {
+  border-left: 5px solid #0fa17e;
 }

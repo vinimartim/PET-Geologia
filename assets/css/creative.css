@@ -96,6 +96,14 @@ img::-moz-selection {
   color: black;
 }
 
+#aprendamais a {
+  color:white;
+}
+
+#aprendamais a:hover {
+  color:white;
+}
+
 #mainNav {
   border-bottom: 1px solid rgba(33, 37, 41, 0.1);
   background-color: #fff;
@@ -105,7 +113,6 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-brand {
-  font-weight: 700;
   text-transform: uppercase;
   color: #ffcc2a;
   font-family: 'Nunito', sans-serif;
@@ -118,7 +125,6 @@ img::-moz-selection {
 #mainNav .navbar-nav > li.nav-item > a.nav-link,
 #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
   font-size: .9rem;
-  font-weight: 700;
   text-transform: uppercase;
   color: #212529;
 }
@@ -269,6 +275,7 @@ header.masthead h1 {
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
   padding: 0 15px;
   font-family: 'Nunito', sans-serif;
+}
 
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
   font-size: 14px;
