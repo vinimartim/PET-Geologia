@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Migration_Create_pagina_table extends CI_Migration {
+class Migration_Create_informatives_table extends CI_Migration {
     public function up() {
         $this->dbforge->add_field(array(
             'id' => array(
@@ -10,7 +10,7 @@ class Migration_Create_pagina_table extends CI_Migration {
                 'NULL' => FALSE
             ),
 
-            'titulo' => array(
+            'title' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '140',
                 'NULL' => FALSE
@@ -22,12 +22,12 @@ class Migration_Create_pagina_table extends CI_Migration {
                 'NULL' => TRUE
             ),
 
-            'conteudo' => array(
+            'content' => array(
                 'type' => 'TEXT',
                 'NULL' => FALSE
             ),
 
-            'atv_inicio' => array (
+            'home_active' => array (
                 'type' => 'boolean',
                 'default' => '0',
             ),
@@ -39,10 +39,10 @@ class Migration_Create_pagina_table extends CI_Migration {
         ));
 
         $this->dbforge->add_key('id', TRUE);
-        $this->dbforge->create_table('pagina');
+        $this->dbforge->create_table('informatives');
     }
 
     public function down() {
-        $this->dbforge->drop_table('pagina');
+        $this->dbforge->drop_table('informatives');
     }
 }
