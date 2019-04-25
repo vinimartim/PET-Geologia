@@ -21,6 +21,11 @@ class Migration_Create_links_table extends CI_Migration {
 				'NULL' => FALSE
 			),
 
+            'url' => array(
+                'type' => 'TEXT',
+                'NULL' => TRUE
+            ),
+
             'icon' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '255',
@@ -30,6 +35,7 @@ class Migration_Create_links_table extends CI_Migration {
             'home_section' => array(
                 'type' => 'int',
                 'constraint' => '4',
+                'NULL' => TRUE
             )
         ));
 

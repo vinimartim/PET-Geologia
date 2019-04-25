@@ -39,7 +39,7 @@ class Images extends CI_Controller {
 		} else {
 			$this->session->set_flashdata('danger','Não foi possível adicionar a imagem');
 		}
-		redirect('dashboard/images/list');
+		redirect('dashboard/images');
 	}
 
 	public function remove() {
@@ -54,10 +54,10 @@ class Images extends CI_Controller {
 
 		if($rmv_image) {
 			$this->session->set_flashdata('success','Imagem removida com sucesso');
-			redirect('dashboard/images/list');
+			redirect('dashboard/images');
 		} else {
 			$this->session->set_flashdata('danger','Não foi possível remover a imagem');
-			redirect('dashboard/images/list');
+			redirect('dashboard/images');
 		}
 
 	}

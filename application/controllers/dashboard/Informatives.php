@@ -41,7 +41,7 @@ class Informatives extends CI_Controller {
 		} else {
 			$this->session->set_flashdata('danger', 'Não foi possível adicionar a página');
 		}
-		redirect('dashboard/informatives/list');	
+		redirect('dashboard/informatives');	
 	}
 
 	public function editForm($id) {
@@ -70,7 +70,7 @@ class Informatives extends CI_Controller {
 		} else {
 			$this->session->set_flashdata('danger','Não foi ´possível editar o informativo');
 		}
-		redirect('dashboard/informatives/list');
+		redirect('dashboard/informatives');
 	}
 
 	public function remove() {
@@ -83,6 +83,6 @@ class Informatives extends CI_Controller {
 		} else {
 			$this->session->set_flashdata('danger', 'Não foi possível remover a página');
 		}
-		redirect('dashboard/informatives/list');
+		redirect('dashboard/informatives');
 	}
 }

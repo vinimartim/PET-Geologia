@@ -15,23 +15,13 @@
 
     <div id="content-wrapper">
         <div class="container-fluid">
-            <!-- Breadcrumbs-->
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="<?= base_url() ?>dashboard">Dashboard</a>
-                </li>
-                <li class="breadcrumb-item active">
-                    Sobre nós
-                </li>
-            </ol>
-
             <!--Flashdatas -->
             <?php $this->load->view('dashboard/templates/flashdata'); ?>
             <!--/-->
 
             <div class="row">
                 <div class="col">
-                    <h2>Sobre nós</h2><?= $about['id'] ?>
+                    <h2>Sobre nós</h2>
                 </div>
                 <div class="col">
                     <a  method="post" class="btn btn-primary mb-3 float-right" href="<?= base_url() ?>dashboard/about/editar/<?= $about['id'] ?>" ?><i class="fas fa-edit"></i> Editar</a>

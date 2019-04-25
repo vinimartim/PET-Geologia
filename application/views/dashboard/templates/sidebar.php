@@ -1,7 +1,7 @@
 <div id="wrapper">
     <ul class="sidebar navbar-nav" id="sidebar">
         <li class="nav-item" id="dashboard">
-            <a class="nav-link" href="<?= base_url() ?>dashboard">
+            <a class="nav-link" href="<?= base_url() ?>dashboard/home">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span>
             </a>

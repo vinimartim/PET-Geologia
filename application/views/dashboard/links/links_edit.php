@@ -15,25 +15,18 @@
 
         <div id="content-wrapper">
             <div class="container-fluid">
-                <!-- Breadcrumbs-->
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <a href="<?= base_url() ?>admin/dashboard">Dashboard</a>
-                    </li>
-                    <li class="breadcrumb-item active">
-                        Links
-                    </li>
-                    <li class="breadcrumb-item active">
-                        Editar link
-                    </li>
-                </ol>
-     
                 <?php $this->load->view('dashboard/templates/flashdata') ?>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <h2>Editar link</h2>
+                    </div>
+                </div>
 
                 <ul id="lista-erros">
                 </ul>
 
-                <form action="<?= base_url() ?>dashboard/links/update/<?= $link['id'] ?>" method="post" id="cadastrar">
+                <form action="<?= base_url() ?>dashboard/links/update/<?= $link['id'] ?>" method="post" id="cad_link">
 					<input type="hidden" name="id" value="<?= $link['id'] ?>">
 
                     <div class="form-label-group">
@@ -46,27 +39,24 @@
                         <label for="description" class="col-sm-1 col-form-label">Descrição</label>
                     </div>
 
-					<label class="sr-only" for="inlineFormInputGroup">URL</label>
-					<div class="input-group mb-2">
-						<div class="input-group-prepend">
-						<div class="input-group-text">http://</div>
-						</div>
-						<input type="text" class="form-control" id="inlineFormInputGroup" value="<?= $link['url'] ?>" placeholder="URL" style="height: 50px;">
-					</div>
+					<div class="form-label-group">
+                        <input name="url" type="text" class="form-control" id="url" placeholder="URL" value="<?= $link['url'] ?>">
+                        <label for="url" class="col-sm-1 col-form-label">URL</label>
+                    </div>
+                    <p class="alert alert-warning py-0"><small>Exemplo de URL: http://exemplo.com.br</small></p>
 					
-					<p class="alert alert-warning">
-						<small>Para adicionar um ícone, acesse o site <a href="http://fontawesome.com">Fontawesome</a>, busque um ícone de sua preferência e cole seu respectivo código no campo abaixo.<br>
-						Exemplo do código: &lt;i class="fas fa-map-marker-alt"&gt;&lt;/i&gt;<br>
-                        Lembre-se que cada seção fica estéticamente melhor com <strong>três</strong> ícones
-						</small>
-					</p>
-
                     <div class="form-label-group">
                         <input name="icon" type="text" class="form-control" id="icon" value='<?= $link['icon'] ?>' placeholder="Ícone">
                         <label for="icon" class="col-sm-1 col-form-label">Ícone</label>
                     </div>
 
-					<p>Seção que o link deve aparecer:</p>
+                    <p class="alert alert-warning py-0">
+                        <small>Para adicionar um ícone, acesse o site <a href="http://fontawesome.com">Fontawesome</a>, busque um ícone de sua preferência e cole seu respectivo código no campo acima.<br>
+                        Exemplo do código: &lt;i class="fas fa-map-marker-alt"&gt;&lt;/i&gt;.<br>
+                        </small>
+                    </p>
+
+                    <p>Seção que o link deve aparecer:</p>
 
 					<?php $checkedRadio = 'checked'; ?>
 					
@@ -98,6 +88,7 @@
     </div>
 
     <?php $this->load->view('dashboard/templates/js') ?>
+    <script type="text/javascript" src="<?= base_url() ?>assets/js/validationLinks.js"></script>
 
 </body>
 

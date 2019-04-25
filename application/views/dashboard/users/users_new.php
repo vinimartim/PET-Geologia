@@ -15,20 +15,11 @@
 
         <div id="content-wrapper">
             <div class="container-fluid">
-                <!-- Breadcrumbs-->
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <a href="<?= base_url() ?>admin/dashboard">Dashboard</a>
-                    </li>
-                    <li class="breadcrumb-item active">
-                        Usuários
-                    </li>
-                    <li class="breadcrumb-item active">
-                        Cadastrar usuário
-                    </li>
-                </ol>
-     
-                <?php $this->load->view('dashboard/templates/flashdata') ?>
+               <div class="row mb-3">
+                    <div class="col">
+                        <h2>Cadastrar usuário</h2>
+                    </div>
+                </div>
 
                 <ul id="lista-erros">
                 </ul>
@@ -66,7 +57,7 @@
     </div>
 
     <?php $this->load->view('dashboard/templates/js') ?>
-    <script src="<?= base_url() ?>assets/js/form_validation.js"></script>
+    <script src="<?= base_url() ?>assets/js/userValidation.js"></script>
 
 </body>
 

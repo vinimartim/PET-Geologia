@@ -5,4 +5,4 @@
 
 <!-- Custom scripts for all pages-->
 <script src="<?= base_url() ?>assets/js/sb-admin.min.js"></script>
-<script src="<?= base_url() ?>assets/js/activeLink.js"></script>   
+<script src="<?= base_url() ?>assets/js/activeLink.js"></script>  

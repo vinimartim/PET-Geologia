@@ -19,19 +19,11 @@
 
         <div id="content-wrapper">
             <div class="container-fluid">
-                <!-- Breadcrumbs-->
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <a href="<?= base_url() ?>dashboard">Dashboard</a>
-                    </li>
-                    <li class="breadcrumb-item active">
-                        Informativos
-                    </li>
-                    <li class="breadcrumb-item active">
-                        Cadastrar
-                    </li>
-                </ol>
-                
+                <div class="row mb-3">
+                    <div class="col">
+                        <h2>Novo informativo</h2>
+                    </div>
+                </div>
 
                 <?php $user_id = $this->session->userdata('id'); ?>
                 <form method="post" action="<?= base_url() ?>dashboard/informatives/insert" enctype="multipart/form-data" mult>

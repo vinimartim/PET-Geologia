@@ -26,7 +26,7 @@ class Links extends CI_Controller {
 			'title' => $this->input->post('title'),
 			'description' => $this->input->post('description'),
 			'icon' => $this->input->post('icon'),
-			'home_section' => $this->input->post('section'),
+			'home_section' => $this->input->post('home_section'),
 			'url' => $this->input->post('url')
 		);
 
@@ -37,7 +37,7 @@ class Links extends CI_Controller {
 		} else {
 			$this->session->set_flashdata('danger', 'Não foi possível adicionar o link');
 		}
-		redirect('dashboard/links/list');
+		redirect('dashboard/links');
 	}
 
 	public function editForm($id) {
@@ -64,7 +64,7 @@ class Links extends CI_Controller {
 		} else {
 			$this->session->set_flashdata('danger', 'Não foi possível editar o link');
 		}
-		redirect('dashboard/links/list');
+		redirect('dashboard/links');
 	}
 
 	public function remove() {
@@ -78,6 +78,6 @@ class Links extends CI_Controller {
 		} else {
 			$this->session->set_flashdata('danger', 'Não foi possível remover o link');
 		}
-		redirect('dashboard/links/list');
+		redirect('dashboard/links');
 	}
 }

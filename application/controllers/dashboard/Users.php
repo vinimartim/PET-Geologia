@@ -35,7 +35,7 @@ class Users extends CI_Controller {
 		} else {
 			$this->session->set_flashdata('danger','Usuário não foi cadastrado!');
 		}
-		redirect('dashboard/users/list');
+		redirect('dashboard/users');
 	}
 
 	public function editForm($id) {
@@ -61,7 +61,7 @@ class Users extends CI_Controller {
 		} else {
 			$this->session->set_flashdata('danger', 'Usuário não pode ser editado');
 		}
-		redirect('dashboard/users/list');
+		redirect('dashboard/users');
 	}
 
 	public function remove() {
@@ -75,7 +75,7 @@ class Users extends CI_Controller {
 		} else {
 			$this->session->set_flashdata('danger', 'Não foi possível remover o usuário');
 		}
-		redirect('dashboard/users/list');
+		redirect('dashboard/users');
 	}
 
 	public function filter() {

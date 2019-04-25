@@ -35,7 +35,7 @@ class Welcome extends CI_Controller {
 
 			$this->session->set_userdata($session);
 			$this->session->set_flashdata('success','Usuário logado com sucesso');
-			redirect('dashboard');
+			redirect('dashboard/home');
 			
 		} else {
 			$this->session->set_flashdata('danger','Usuário ou senha inválidos');

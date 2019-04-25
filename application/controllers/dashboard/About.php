@@ -33,7 +33,7 @@ class About extends CI_Controller {
 		} else {
 			$this->session->set_flashdata('danger', 'Não foi possível salvar as alterações');
 		}
-		redirect('dashboard/about/list');
+		redirect('dashboard/about');
 	}
 
 

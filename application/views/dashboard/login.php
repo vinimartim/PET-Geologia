@@ -41,10 +41,6 @@
 					</div>
 					<button class="btn btn-primary btn-block" type="submit">Login</button>
 				</form>
-
-				<div class="text-center">
-					<a class="d-block small" href="forgot-password.html">Esqueceu sua senha?</a>
-				</div>
 			</div>
 		</div>
 	</div>

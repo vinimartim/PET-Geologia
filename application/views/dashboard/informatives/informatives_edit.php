@@ -20,19 +20,11 @@
 
     <div id="content-wrapper">
         <div class="container-fluid">
-            <!-- Breadcrumbs-->
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="<?= base_url() ?>dashboard">Dashboard</a>
-                </li>
-                <li class="breadcrumb-item active">
-                    Páginas
-                </li>
-                <li class="breadcrumb-item active">
-                    Cadastrar página
-                </li>
-            </ol>
-           
+            <div class="row mb-3">
+                <div class="col">
+                    <h2>Editar informativo</h2>
+                </div>
+            </div>
 
             <?php $user_id = $this->session->userdata('id'); ?>
             <form name="inputPagina" method="post" action="<?= base_url() ?>dashboard/informatives/update/<?= $informatives['id'] ?>" enctype="multipart/form-data">
@@ -98,7 +90,7 @@
                     <label class="custom-control-label mb-1" for="home_active">Página de início?</label>
                 </div>
 
-                <button type="submit" class="btn btn-primary mt-2">Salvar</button>
+                <button type="submit" class="btn btn-primary mt-2 float-right">Salvar</button>
             </form>
         </div>
         <!-- /.content-wrapper -->

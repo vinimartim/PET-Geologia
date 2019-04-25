@@ -15,16 +15,6 @@
 
     <div id="content-wrapper">
         <div class="container-fluid">
-            <!-- Breadcrumbs-->
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="<?= base_url() ?>dashboard">Dashboard</a>
-                </li>
-                <li class="breadcrumb-item active">
-                    Informativos
-                </li>
-            </ol>
-
             <!--Flashdatas -->
             <?php $this->load->view('dashboard/templates/flashdata'); ?>
             <!--/-->
@@ -37,6 +27,10 @@
                     <a class="btn btn-primary mb-3 float-right" href="<?= base_url() ?>dashboard/informatives/cadastrar"><i class="fas fa-plus"></i> Novo</a>
                 </div>
             </div>
+
+            <div class="input-group mb-3">
+                <input id="search" name="search" type="text" class="form-control" placeholder="Pesquisar por título" aria-label="Pesquisar por título" aria-describedby="button-addon2">
+            </div> 
             
 
             <div class="table-responsive">
@@ -49,8 +43,8 @@
                     </tr>
 
                     <?php foreach((array)$informatives as $informative) : ?>
-                    <tr>
-                        <td><?= $informative['title'] ?></td>
+                    <tr class="tr-class">
+                        <td class="td-info"><?= $informative['title'] ?></td>
                         <td><img src="<?= base_url() ?>assets/uploads/<?= $informative['url'] ?>" style="width:50%"></td>
                         <td>
                           <?php if($informative['home_active'] == '1') : ?>
@@ -77,6 +71,7 @@
     <!-- /#wrapper -->
 
     <?php $this->load->view('dashboard/templates/js') ?>
+    <script src="<?= base_url() ?>assets/js/search.js"></script>   
 
     <?php else : ?>
         <?php $this->load->view('dashboard/login'); ?>
