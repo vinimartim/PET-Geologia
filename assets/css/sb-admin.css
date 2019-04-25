@@ -386,3 +386,7 @@ body.sidebar-toggled footer.sticky-footer {
 .link_active {
   border-left: 5px solid #0fa17e;
 }
+
+.invisible {
+  display: none;
+}
