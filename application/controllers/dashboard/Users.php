@@ -5,9 +5,14 @@ class Users extends CI_Controller {
 	function __construct() {
 		parent:: __construct();
 		$this->load->model('users_model');
+
+		if(empty($this->session->userdata['logged_in'])){
+			$this->session->set_flashdata('danger','Você não possui permissão para acessar essa página');
+			redirect('login');
+		}
 	}
 
-	public function list() {
+	public function index() {
 		$data = $this->users_model->searchAll();
 		$this->load->view('dashboard/users/users_list',[
 			'users' => $data,
@@ -25,17 +30,65 @@ class Users extends CI_Controller {
 		$user = array(
 			'name' => $this->input->post('name'),
 			'username' => $this->input->post('username'),
+			'email' => $this->input->post('email'),
+			'phone' => $this->input->post('phone'),
 			'password' => md5($this->input->post('password'))
 		);
-
-		$add_user = $this->users_model->insert($user);
-
-		if($add_user) {
+		
+		if($this->users_model->insert($user)) {
 			$this->session->set_flashdata('success','Usuário cadastrado com sucesso!');
 		} else {
 			$this->session->set_flashdata('danger','Usuário não foi cadastrado!');
 		}
-		redirect('dashboard/users');
+		redirect('dashboard/users/list');
+	}
+
+	//---------------------------------
+	// EMAIL EXISTS (true or false)
+	//---------------------------------
+	private function emailExists($email) {
+		$this->db->where('email', $email);
+		$query = $this->db->get('users');
+		if( $query->num_rows() > 0 ) {
+			 return TRUE; 
+		} else {
+			return FALSE; 
+		}
+	}
+
+	//---------------------------------
+	// AJAX REQUEST, IF EMAIL EXISTS
+	//---------------------------------
+	function registerEmailExists() {
+		if (array_key_exists('email',$_POST)) {
+			if ($this->emailExists($this->input->post('email')) == TRUE) {
+				echo json_encode(FALSE);
+			} else {
+				echo json_encode(TRUE);
+			}
+		}
+	}
+
+	//---------------------------------
+	// USERNAME EXISTS (true or false)
+	//---------------------------------
+	private function usernameExists($username) {
+		$this->db->where('username', $username);
+		$query = $this->db->get('users');
+		if( $query->num_rows() > 0 ) { return TRUE; } else { return FALSE; }
+	}
+
+	//---------------------------------
+	// AJAX REQUEST, IF USERNAME EXISTS
+	//---------------------------------
+	function registerUsernameExists() {
+		if (array_key_exists('username',$_POST)) {
+			if ( $this->usernameExists($this->input->post('username')) == TRUE ) {
+				echo json_encode(FALSE);
+			} else {
+				echo json_encode(TRUE);
+			}
+		}
 	}
 
 	public function editForm($id) {
@@ -51,6 +104,8 @@ class Users extends CI_Controller {
 		$user = array(
 			'name' => $this->input->post('name'),
 			'username' => $this->input->post('username'),
+			'email' => $this->input->post('email'),
+			'phone' => $this->input->post('phone'),
 			'password' => md5($this->input->post('password'))
 		);
 

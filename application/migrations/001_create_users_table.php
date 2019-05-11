@@ -6,8 +6,7 @@ class Migration_Create_users_table extends CI_Migration {
     		'id' => array(
                 'type' => 'INT',
                 'unsigned' => TRUE,
-                'auto_increment' => TRUE,
-                'NULL' => FALSE
+                'auto_increment' => TRUE
             ),
 
     		'name' => array(
@@ -19,7 +18,19 @@ class Migration_Create_users_table extends CI_Migration {
             'username' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '30',
-                'NULL' => FALSE
+                'NULL' => TRUE
+            ),
+
+            'email' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+                'NULL' => TRUE
+            ),
+
+            'phone' =>array(
+                'type' => 'VARCHAR',
+                'constraint' => '15',
+                'NULL' => TRUE
             ),
 
     		'password' => array(
@@ -30,14 +41,17 @@ class Migration_Create_users_table extends CI_Migration {
 
             'active' => array(
                 'type' => 'boolean',
-                'default' => '1'
+                'default' => '1',
+                'NULL' => TRUE
             )
         ));
 
     	$this->dbforge->add_key('id', TRUE);
         $this->dbforge->create_table('users');
         $usuarioDefault = array(
-            'name' => 'admin',
+            'name' => 'PET Geologia',
+            'email' => 'petgeo@petgeo.com',
+            'phone' => '0055555555',
             'username' => 'admin',
             'password' => md5('petgeo2019'),
         );

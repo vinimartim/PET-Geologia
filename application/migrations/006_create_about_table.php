@@ -6,12 +6,11 @@ class Migration_Create_about_table extends CI_Migration {
     		'id' => array(
                 'type' => 'INT',
                 'unsigned' => TRUE,
-                'auto_increment' => TRUE,
-                'NULL' => FALSE
+                'auto_increment' => TRUE
             ),
     		'content' => array(
                 'type' => 'text',
-                'NULL' => FALSE
+                'NULL' => TRUE
 			)
 		));
 

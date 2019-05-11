@@ -14,12 +14,11 @@
         <div id="content-wrapper">
             <div class="container-fluid">
                 <?php $this->load->view('dashboard/templates/flashdata'); ?>
-                <h1 class="display-4">Painel administrativo</h1>
+                <h1>Painel administrativo</h1>
             </div>
             <!-- /.content-wrapper -->
         </div>
         <!-- /#wrapper -->
         <?php $this->load->view('dashboard/templates/js') ?> 
 </body>
-
 </html>

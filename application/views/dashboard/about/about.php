@@ -6,7 +6,6 @@
 </head>
 
 <body id="page-top">
-    <?php if($this->session->userdata('logged_in')) : ?>
     <?php $this->load->view('dashboard/templates/navbar') ?>
 
     <div id="wrapper">
@@ -21,16 +20,16 @@
 
             <div class="row">
                 <div class="col">
-                    <h2>Sobre nós</h2>
+                    <h3>Sobre nós</h3>
                 </div>
                 <div class="col">
-                    <a  method="post" class="btn btn-primary mb-3 float-right" href="<?= base_url() ?>dashboard/about/editar/<?= $about['id'] ?>" ?><i class="fas fa-edit"></i> Editar</a>
+                    <a  method="post" class="btn btn-primary mb-3 float-right" href="<?= base_url() ?>dashboard/about/editar/<?= $about['id'] ?>" ?><i class="fas fa-edit mr-2"></i> Editar</a>
                 </div>
             </div>
 
 			<div class="card">
 				<div class="card-body">
-					<p><?= nl2br($about['content']) ?>
+					<p><?= html_escape(nl2br($about['content'])) ?>
 				</div>
 			</div>
 		</div>
@@ -41,10 +40,6 @@
     <!-- /#wrapper -->
 
     <?php $this->load->view('dashboard/templates/js') ?>
-
-    <?php else : ?>
-        <?php $this->load->view('login'); ?>
-    <?php endif ?>
   </body>
 
 </html>

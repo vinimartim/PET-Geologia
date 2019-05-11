@@ -14,7 +14,7 @@
 
 	<!-- Custom fonts for this template -->
 	
-	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,600" rel="stylesheet">
 
 	<!--Font Awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -32,9 +32,12 @@
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
 		<div class="container">
-			<a class="navbar-brand js-scroll-trigger navbrand" href="#page-top">
-				<img class="img-fluid" src="<?= base_url() ?>assets/img/logoalt.png" style="height: 50px;">
-			</a>
+			<div class="navbar-brand">
+				<a class="logo" href="">
+					<img class="img-fluid logo-img" src="<?= base_url() ?>assets/img/mglogo_alt.png" style="height: 50px;">
+					<img class="img-fluid logo-img-alt" src="<?= base_url() ?>assets/img/mglogo.png" style="height: 50px;">
+				</a>
+			</div>
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -45,6 +48,9 @@
 					</li>
 					<li class="nav-item">
 						<a class="nav-link js-scroll-trigger" href="#geologia">A Geologia</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" href="#informativos">Informativos</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link js-scroll-trigger" href="#aprendamais">Aprenda mais</a>
@@ -63,11 +69,12 @@
 			<div class="row">
 				<div class="col-lg-10 mx-auto">
 					<h1 class="text-uppercase" style="letter-spacing: 5px;">
-						<strong>PET-Geologia</strong>
+						<strong>Mundo Geologia</strong>
 					</h1>
 					<hr>
 				</div>
 				<div class="col-lg-8 mx-auto">
+					<p class="text-faded">PET Geologia</p>
 					<p class="text-faded mb-5">Universidade Estadual Paulista - UNESP</p>
 				</div>
 			</div>
@@ -80,7 +87,7 @@
 				<div class="col-lg-8 mx-auto text-center">
 					<h2 class="section-heading text-white">Sobre nós</h2>
 					<hr class="light my-4">
-					<p class="text-faded mb-4 text-justify"><?= nl2br($about['content']) ?></p>
+					<h5 class="text-faded mb-4 text-justify text-about"><?= nl2br($about['content']) ?></h5>
 				</div>
 			</div>
 		</div>
@@ -114,7 +121,7 @@
 		</div>
 	</section>
 
-	<section class="p-0 text-uppercase" id="portfolio">
+	<section class="p-0 text-uppercase" id="informativos">
 		<div class="container-fluid p-0">
 			<div class="row no-gutters">
 				<?php foreach((array)$informatives as $informative) : ?>

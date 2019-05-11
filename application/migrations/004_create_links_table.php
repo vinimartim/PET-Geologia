@@ -6,19 +6,18 @@ class Migration_Create_links_table extends CI_Migration {
             'id' => array(
             'type' => 'INT',
             'unsigned' => TRUE,
-            'auto_increment' => TRUE,
-            'NULL' => FALSE
+            'auto_increment' => TRUE
 			),
 			
 			'title' => array(
 				'type' => 'VARCHAR',
-				'constraint' => '255',
-				'NULL' => FALSE
+                'constraint' => '255',
+                'NULL' => TRUE
 			),
 
 			'description' => array(
-				'type' => 'TEXT',
-				'NULL' => FALSE
+                'type' => 'TEXT',
+                'NULL' => TRUE
 			),
 
             'url' => array(

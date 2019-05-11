@@ -6,7 +6,6 @@
 </head>
 
 <body id="page-top">
-    <?php if($this->session->userdata('logged_in')) : ?>
     <?php $this->load->view('dashboard/templates/navbar') ?>
 
     <div id="wrapper">
@@ -29,7 +28,7 @@
 				<input type="hidden" name="id" value="<?= $about['id']?>">
 				<textarea rows="10" class="form-control" name="content" id="content"><?= $about['content'] ?></textarea>
             	
-				<button  type="submit" class="btn btn-success mt-3 float-right"><i class="fas fa-edit"></i> Salvar</button>
+				<button  type="submit" class="btn btn-success mt-3 float-right"><i class="fas fa-save mr-2"></i> Salvar</button>
 			</form>
 		</div>
       </div>
@@ -39,10 +38,6 @@
     <!-- /#wrapper -->
 
     <?php $this->load->view('dashboard/templates/js') ?>
-
-    <?php else : ?>
-        <?php $this->load->view('login'); ?>
-    <?php endif ?>
   </body>
 
 </html>

@@ -11,6 +11,26 @@ class Users_model extends CI_Model {
         return $this->db->get('users')->row_array();
     }
 
+    function emailUnavailable($email) {  
+        $this->db->where('email', $email);  
+        $query = $this->db->get('users');  
+        if($query->num_rows() > 0) {  
+            return true;  
+        } else {  
+            return false;  
+        }  
+    }  
+
+    function usernameUnavailable($username){  
+        $this->db->where('username', $username);  
+        $query = $this->db->get('users');  
+        if($query->num_rows() > 0) {  
+            return true;  
+        } else {  
+            return false;  
+        }  
+    } 
+
     public function searchAll() {
     	return $this->db->get('users')->result_array();
     }

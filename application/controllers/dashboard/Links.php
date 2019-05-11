@@ -5,9 +5,14 @@ class Links extends CI_Controller {
 	function __construct() {
 		parent:: __construct();
 		$this->load->model('links_model');
+
+		if(empty($this->session->userdata['logged_in'])){
+			$this->session->set_flashdata('danger','Você não possui permissão para acessar essa página');
+			redirect('login');
+		}
 	}
 
-	public function list() {
+	public function index() {
 		$data = $this->links_model->searchAll();
 		$this->load->view('dashboard/links/links_list',[
 			'links' => $data,

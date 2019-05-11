@@ -5,9 +5,14 @@ class Images extends CI_Controller {
 	function __construct() {
 		parent:: __construct();
 		$this->load->model('images_model');
+
+		if(empty($this->session->userdata['logged_in'])){
+			$this->session->set_flashdata('danger','Você não possui permissão para acessar essa página');
+			redirect('login');
+		}
 	}
 
-	public function list() {
+	public function index() {
 		$data = $this->images_model->searchAll();
 		$this->load->view('dashboard/images/images', [
 			'images' => $data,
@@ -25,7 +30,8 @@ class Images extends CI_Controller {
 			$query = $this->upload->data();
 			$url = $query['file_name'];
 		} else {
-			redirect('welcome');
+			$this->session->set_flashdata('danger','Não foi possível adicionar a imagem');
+			redirect('dashboard/images');
 		}
 
 		$image = array(

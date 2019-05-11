@@ -7,9 +7,13 @@ class Informatives extends CI_Controller {
 		$this->load->model('informatives_model');
 		$this->load->model('images_model');
 
+		if(empty($this->session->userdata['logged_in'])){
+			$this->session->set_flashdata('danger','Você não possui permissão para acessar essa página');
+			redirect('login');
+		}
 	}
 
-	public function list() {
+	public function index() {
 		$data = $this->informatives_model->searchAll();
 		$this->load->view('dashboard/informatives/informatives_list',[
 			'informatives' => $data,

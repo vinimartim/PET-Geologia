@@ -6,8 +6,7 @@ class Migration_Create_images_table extends CI_Migration {
             'id' => array(
                 'type' => 'INT',
                 'unsigned' => TRUE,
-                'auto_increment' => TRUE,
-                'NULL' => FALSE
+                'auto_increment' => TRUE
             ),
 
             'url' => array(

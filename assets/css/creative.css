@@ -11,7 +11,8 @@ html {
 }
 
 body {
-    font-family: 'Nunito', sans-serif;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
 }
 
 hr {
@@ -333,4 +334,16 @@ header.masthead h1 {
 .btn-primary:active, .btn-primary:focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
   box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
+}
+
+#mainNav.navbar-shrink:not(.fixed-navbar) .navbar-brand .logo .logo-img {
+  display: none;
+}
+
+#mainNav.fixed-navbar .navbar-brand .logo .logo-img-alt {
+  display: none;
+}
+
+#mainNav:not(.navbar-shrink) .navbar-brand .logo .logo-img-alt {
+  display: none;
 }

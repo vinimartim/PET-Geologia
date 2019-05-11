@@ -8,7 +8,7 @@ class Migration_Create_url_column_links_table extends CI_Migration {
 			$campos = array(
 				'url' => array(
 					'type' => 'text',
-					'default' => NULL
+					'NULL' => TRUE
 				)
 			);
 

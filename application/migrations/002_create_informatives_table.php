@@ -6,14 +6,13 @@ class Migration_Create_informatives_table extends CI_Migration {
             'id' => array(
                 'type' => 'INT',
                 'unsigned' => TRUE,
-                'auto_increment' => TRUE,
-                'NULL' => FALSE
+                'auto_increment' => TRUE
             ),
 
             'title' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '140',
-                'NULL' => FALSE
+                'NULL' => TRUE
             ),
 
             'url' => array(
@@ -24,17 +23,18 @@ class Migration_Create_informatives_table extends CI_Migration {
 
             'content' => array(
                 'type' => 'TEXT',
-                'NULL' => FALSE
+                'NULL' => TRUE
             ),
 
             'home_active' => array (
                 'type' => 'boolean',
                 'default' => '0',
+                'NULL' => TRUE
             ),
 
             'user_id' => array(
                 'type' => 'boolean',
-                'NULL' => FALSE
+                'NULL' => TRUE
             )
         ));
 
